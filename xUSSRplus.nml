@@ -1,0 +1,447 @@
+# 1 "xUSSRplus.pnml"
+grf {
+    
+    grfid: "YZ\AA\02";
+    name: string(STR_NAME);
+    desc: string(STR_DESC);
+		url:  string(STR_GRF_URL);
+    version: 1; //0.1
+    min_compatible_version: 0;
+}
+
+railtypetable {
+//  avtonomnaaa
+  T_R0: [RLA0,       RLA1,  SAAN,SABN,SACN,SADN,SAEN,  RAIL],
+  T_R1: [RLA2,       RLA1,  SBAN,SBBN,SBCN,SBDN,SBEN,  SAAN,SABN,SACN,SADN,SAEN,  RAIL],
+  T_R2: [RLA3,RLA4,  RLA1,  SCAN,SCBN,SCCN,SCDN,SCEN,  SBAN,SBBN,SBCN,SBDN,SBEN,  SAAN,SABN,SACN,SADN,SAEN,  RAIL],
+// peremenka 25kv 50hz
+  T_A0: [ERA0,       ERA1,  SAAA,SABA,SACA,SADA,SAEA,                                                        SAAE,SABE,SACE,SADE,SAEE,                                                        ELRL],
+  T_A1: [ERA2,       ERA1,  SBAA,SBBA,SBCA,SBDA,SBEA,  SAAA,SABA,SACA,SADA,SAEA,                             SBAE,SBBE,SBCE,SBDE,SBEE,  SAAE,SABE,SACE,SADE,SAEE,                             ELRL],
+  T_A2: [ERA3,ERA4,  ERA1,  SCAA,SCBA,SCCA,SCDA,SCEA,  SBAA,SBBA,SBCA,SBDA,SBEA,  SAAA,SABA,SACA,SADA,SAEA,  SCAE,SCBE,SCCE,SCDE,SCEE,  SBAE,SBBE,SBCE,SBDE,SBEE,  SAAE,SABE,SACE,SADE,SAEE,  ELRL],
+// peremenka 15kv 50hz
+  T_a0: [ERa0,       ERa1,  ERA0,ERA1,  SAAa,SABa,SACa,SADa,SAEa,                                                        SAAA,SABA,SACA,SADA,SAEA,                                                        SAAE,SABE,SACE,SADE,SAEE,                                                        ELRL],
+  T_a1: [ERa2,       ERa1,  ERA2,       SBAa,SBBa,SBCa,SBDa,SBEa,  SAAa,SABa,SACa,SADa,SAEa,                             SBAA,SBBA,SBCA,SBDA,SBEA,  SAAA,SABA,SACA,SADA,SAEA,                             SBAE,SBBE,SBCE,SBDE,SBEE,  SAAE,SABE,SACE,SADE,SAEE,                             ELRL],
+  T_a2: [ERa3,ERa4,  ERa1,  ERA3,ERA4,  SCAa,SCBa,SCCa,SCDa,SCEa,  SBAa,SBBa,SBCa,SBDa,SBEa,  SAAa,SABa,SACa,SADa,SAEa,  SCAA,SCBA,SCCA,SCDA,SCEA,  SBAA,SBBA,SBCA,SBDA,SBEA,  SAAA,SABA,SACA,SADA,SAEA,  SCAE,SCBE,SCCE,SCDE,SCEE,  SBAE,SBBE,SBCE,SBDE,SBEE,  SAAE,SABE,SACE,SADE,SAEE,  ELRL],
+// postoyanka 3kv
+  T_D0: [ERD0,       ERD1,  ERA0,ERA1,  SAAD,SABD,SACD,SADD,SAED,                                                        SAAA,SABA,SACA,SADA,SAEA,                                                        SAAE,SABE,SACE,SADE,SAEE,                                                        ELRL],
+  T_D1: [ERD2,       ERD1,  ERA2,       SBAD,SBBD,SBCD,SBDD,SBED,  SAAD,SABD,SACD,SADD,SAED,                             SBAA,SBBA,SBCA,SBDA,SBEA,  SAAA,SABA,SACA,SADA,SAEA,                             SBAE,SBBE,SBCE,SBDE,SBEE,  SAAE,SABE,SACE,SADE,SAEE,                             ELRL],
+  T_D2: [ERD3,ERD4,  ERD1,  ERA3,ERA4,  SCAD,SCBD,SCCD,SCDD,SCED,  SBAD,SBBD,SBCD,SBDD,SBED,  SAAD,SABD,SACD,SADD,SAED,  SCAA,SCBA,SCCA,SCDA,SCEA,  SBAA,SBBA,SBCA,SBDA,SBEA,  SAAA,SABA,SACA,SADA,SAEA,  SCAE,SCBE,SCCE,SCDE,SCEE,  SBAE,SBBE,SBCE,SBDE,SBEE,  SAAE,SABE,SACE,SADE,SAEE,  ELRL],
+// postoyanka 1,5 kv
+  T_d0: [ERd0,       ERd1,  ERD0,ERD1,  ERA0,ERA1,  SAAd,SABd,SACd,SADd,SAEd,                                                        SAAD,SABD,SACD,SADD,SAED,                                                        SAAA,SABA,SACA,SADA,SAEA,                                                        SAAE,SABE,SACE,SADE,SAEE,                                                        ELRL],
+  T_d1: [ERd2,       ERd1,  ERD2,       ERA2,       SBAd,SBBd,SBCd,SBDd,SBEd,  SAAd,SABd,SACd,SADd,SAEd,                             SBAD,SBBD,SBCD,SBDD,SBED,  SAAD,SABD,SACD,SADD,SAED,                             SBAA,SBBA,SBCA,SBDA,SBEA,  SAAA,SABA,SACA,SADA,SAEA,                             SBAE,SBBE,SBCE,SBDE,SBEE,  SAAE,SABE,SACE,SADE,SAEE,                             ELRL],
+  T_d2: [ERd3,ERd4,  ERd1,  ERD3,ERD4,  ERA3,ERA4,  SCAd,SCBd,SCCd,SCDd,SCEd,  SBAd,SBBd,SBCd,SBDd,SBEd,  SAAd,SABd,SACd,SADd,SAEd,  SCAD,SCBD,SCCD,SCDD,SCED,  SBAD,SBBD,SBCD,SBDD,SBED,  SAAD,SABD,SACD,SADD,SAED,  SCAA,SCBA,SCCA,SCDA,SCEA,  SBAA,SBBA,SBCA,SBDA,SBEA,  SAAA,SABA,SACA,SADA,SAEA,  SCAE,SCBE,SCCE,SCDE,SCEE,  SBAE,SBBE,SBCE,SBDE,SBEE,  SAAE,SABE,SACE,SADE,SAEE,  ELRL],
+// mnogosistemka
+// 2S = A + D (3 kv + 25 kv)
+  T_2S: [ER2S,  "SAA)",  SEAA,SEBA,SECA,SEDA,SEEA,  SDAA,SDBA,SDCA,SDDA,SDEA,  SCAA,SCBA,SCCA,SCDA,SCEA,  SBAA,SBBA,SBCA,SBDA,SBEA,  SAAA,SABA,SACA,SADA,SAEA,  SEAD,SEBD,SECD,SEDD,SEED,  SDAD,SDBD,SDCD,SDDD,SDED,  SCAD,SCBD,SCCD,SCDD,SCED,  SBAD,SBBD,SBCD,SBDD,SBED,  SAAD,SABD,SACD,SADD,SAED,    SEAE,SEBE,SECE,SEDE,SEEE,  SDAE,SDBE,SDCE,SDDE,SDEE,  SCAE,SCBE,SCCE,SCDE,SCEE,  SBAE,SBBE,SBCE,SBDE,SBEE,  SAAE,SABE,SACE,SADE,SAEE,  ELRL],
+// 2D = D + d (1,5 kv + 3 kv)
+  T_2D: [ER2D,  "SAA=",  SEAD,SEBD,SECD,SEDD,SEED,  SDAD,SDBD,SDCD,SDDD,SDED,  SCAD,SCBD,SCCD,SCDD,SCED,  SBAD,SBBD,SBCD,SBDD,SBED,  SAAD,SABD,SACD,SADD,SAED,  SEAd,SEBd,SECd,SEDd,SEEd,  SDAd,SDBd,SDCd,SDDd,SDEd,  SCAd,SCBd,SCCd,SCDd,SCEd,  SBAd,SBBd,SBCd,SBDd,SBEd,  SAAd,SABd,SACd,SADd,SAEd,    SEAE,SEBE,SECE,SEDE,SEEE,  SDAE,SDBE,SDCE,SDDE,SDEE,  SCAE,SCBE,SCCE,SCDE,SCEE,  SBAE,SBBE,SBCE,SBDE,SBEE,  SAAE,SABE,SACE,SADE,SAEE,  ELRL],
+}
+
+//offset fixing
+train_width_32_px = 1;
+traininfo_y_offset = 2;
+disable_item(FEAT_TRAINS);
+
+template tmpl_purchase (x, y) {
+		[]
+	 	[]
+	 	[]
+	 	[]
+	 	[]
+	 	[]
+    [x, y, 100, 18, -40, -13]
+		[]
+}
+
+spriteset (dummy_sprites, "gfx/misc/empty.png")
+{
+  [0, 0, 2, 2, 0, 0, CROP]
+}
+
+template tmpl_std(x,y) {
+    // parameters x, y: coordinates of top-left corner of front sprite
+[x,       y,  7,  36,   -2,  -30, CROP] //short
+[x + 8,   y,	32,	32,		-20, 	-22, CROP] //dia1
+[x + 41,  y,	52,	23,		-27,	-20, CROP] //long
+[x + 94,  y,	32,	32,		-12, 	-23, CROP] //dia2
+[x + 127, y,	8, 	24,		-3, 	-16, CROP] //short
+[x + 135, y,	32,	32,		-18, 	-23, CROP] //dia1
+[x + 168, y,	52,	23,		-23,	-20, CROP] //long
+[x + 221, y,	32,	32,		-10, 	-22, CROP] //dia2
+}
+
+template tmpl_std_rev(x,y){
+[x + 127, y,	8, 	24,		-3, 	-16, CROP] //short
+[x + 135, y,	32,	32,		-20, 	-22, CROP] //dia1
+[x + 168, y,	52,	23,		-27,	-20, CROP] //long
+[x + 221, y,	32,	32,		-12, 	-23, CROP] //dia2
+[x,       y,  7,  36,   -2,  -30, CROP] //short
+[x + 8,   y,	32,	32,		-18, 	-23, CROP] //dia1
+[x + 41,  y,	52,	23,		-23,	-20, CROP] //long
+[x + 94,  y,	32,	32,		-10, 	-22, CROP] //dia2
+}
+
+local_cargo_age = 185; // Metro/commuter service. 
+	express_cargo_age = 231; // Express and Q/reserved seat cars. Tickets cost more.
+	ltd_express_cargo_age = 278; // only limited expresses. High ticket cost.
+
+param_loading_1D = 10; // 1 door //
+		param_loading_2D = 20; // 2 doors //
+		param_loading_3D = 30; // 3 doors //
+		param_loading_4D = 40; // 4 doors //
+		param_loading_5D = 60; // 5 doors //
+		param_loading_6D = 70; // 6 doors //
+switch(FEAT_TRAINS, SELF, sw_empty_desc,cargo_subtype){
+    0:string(LV_DEFAULT);
+  }
+
+spriteset (set_mu_car_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,    "gfx/misc/mucarbuy.png") { tmpl_purchase(0, 0) }
+spriteset (set_mu_car_base, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/misc/mucar.png") { tmpl_std(0, 0) }
+
+switch (FEAT_TRAINS, SELF, sw_length_2_8_2, position_in_articulated_veh % 3) {
+    0: return 2;
+    1: return 8;
+    return 3;
+  }
+
+switch(FEAT_TRAINS, SELF, sw_mucar_full_articulated_part, extra_callback_info1) {
+	1: return mu_car;
+  2: return mu_car;
+  return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_attach_vehid, vehicle_type_id) {
+  mu_car: CB_RESULT_ATTACH_ALLOW;
+  return string(STR_ATTACH_ERROR);
+}
+
+switch (FEAT_TRAINS, SELF, sw_stop_start_3, num_vehs_in_consist < 9) {				
+			1:  return string(STR_FEW_CARS_3_ERROR); 				
+			return CB_RESULT_NO_TEXT; 
+		}
+
+item(FEAT_TRAINS, mu_car, 100) {
+	property {
+        name:  string(STR_MUCAR);
+        introduction_date: date(1800,1,1);
+        climates_available: ALL_CLIMATES;
+                model_life: VEHICLE_NEVER_EXPIRES;
+                vehicle_life: 60;
+                loading_speed: param_loading_3D;
+                cost_factor: 30;
+                running_cost_factor: 7;
+                speed: 0 km/h;
+                power: 0 hp;
+                cargo_capacity: 1;
+                weight: 0 ton;
+                tractive_effort_coefficient: 0.3;
+                air_drag_coefficient: 0;
+                reliability_decay: 20;
+                refittable_cargo_classes: bitmask(CC_PASSENGERS);
+                cargo_age_period: 185;
+                refit_cost: 0;
+				track_type:T_2S;
+                ai_special_flag: AI_FLAG_PASSENGER;
+                running_cost_base: RUNNING_COST_ELECTRIC;
+                engine_class: ENGINE_CLASS_STEAM;
+                visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+                sprite_id: SPRITE_ID_NEW_TRAIN;
+                dual_headed: 0;
+                extra_power_per_wagon: 0;
+                bitmask_vehicle_info: 0;
+}
+ graphics {
+    cargo_subtype_text: sw_empty_desc;
+		purchase:                     set_mu_car_purchase;
+    additional_text:			        return string(STR_MUCAR_DESC);
+    default: set_mu_car_base;
+		length: sw_length_2_8_2;
+    articulated_part: sw_mucar_full_articulated_part;
+    }
+
+}
+
+# 1 "src/ivolga/ivolga0.pnml" 1
+spriteset (ivolga0_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,      "gfx/ivolga/ivolga0_purchase.png") { tmpl_purchase(0, 0) }
+
+spriteset (ivolga0_1_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga0_1.png") { tmpl_std(0, 0) }
+spriteset (ivolga0_1_end, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga0_1.png") { tmpl_std_rev(0, 37) }
+spriteset (ivolga0_1_mot_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga0_1.png") { tmpl_std(0, 74) }
+spriteset (ivolga0_1_mot_d_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga0_1.png") { tmpl_std_rev(0, 74) }
+spriteset (ivolga0_1_mot, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga0_1.png") { tmpl_std(0, 111) }
+spriteset (ivolga0_1_mot_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga0_1.png") { tmpl_std_rev(0, 111) }
+spriteset (ivolga0_1_mot_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga0_1.png") { tmpl_std(0, 148) }
+spriteset (ivolga0_1_mot_2_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga0_1.png") { tmpl_std_rev(0, 148) }
+spriteset (ivolga0_1_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga0_1.png") { tmpl_std(0, 185) }
+spriteset (ivolga0_1_wag_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga0_1.png") { tmpl_std_rev(0, 185) }
+spriteset (ivolga0_1_front_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga0_1.png") { tmpl_std(0, 222) }
+spriteset (ivolga0_1_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga0_1.png") { tmpl_std_rev(0, 222) }
+
+  //gfx setter
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_end,position_in_articulated_veh % 3){
+        1: ivolga0_1_end;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_front,position_in_articulated_veh % 3){
+        1: ivolga0_1_front;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_mot,position_in_articulated_veh % 3){
+        1: ivolga0_1_mot;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_mot_rev,position_in_articulated_veh % 3){
+        1: ivolga0_1_mot_rev;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_mot_d,position_in_articulated_veh % 3){
+        1: ivolga0_1_mot_d;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_mot_d_rev,position_in_articulated_veh % 3){
+        1: ivolga0_1_mot_d_rev;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_mot_2,position_in_articulated_veh % 3){
+        1: ivolga0_1_mot_2;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_mot_2_rev,position_in_articulated_veh % 3){
+        1: ivolga0_1_mot_2_rev;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_wag,position_in_articulated_veh % 3){
+        1: ivolga0_1_wag;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_wag_rev,position_in_articulated_veh % 3){
+        1: ivolga0_1_wag_rev;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_front_f,position_in_articulated_veh % 3){
+        1: ivolga0_1_front_f;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_end_f,position_in_articulated_veh % 3){
+        1: ivolga0_1_end_f;
+        dummy_sprites;
+    }
+  //panto placer 1 (5)
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_panto_placer_1,position_in_consist%12){
+      4: sw_ivolga0_mot;
+      7: sw_ivolga0_mot_d;
+      10: sw_ivolga0_mot_2;
+      sw_ivolga0_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_panto_placer_1_rev,position_in_consist_from_end%12){
+      4: sw_ivolga0_mot_rev;
+      7: sw_ivolga0_mot_d_rev;
+      10: sw_ivolga0_mot_2_rev;
+      sw_ivolga0_wag_rev;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga0_panto_placer_1_main, vehicle_is_reversed){
+      1: sw_ivolga0_panto_placer_1_rev;
+      sw_ivolga0_panto_placer_1;
+    }
+  //panto placer 2 (5)
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_panto_placer_2,position_in_consist%9){
+      4: sw_ivolga0_mot;
+      7: sw_ivolga0_mot_2;
+      sw_ivolga0_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_panto_placer_2_rev,position_in_consist_from_end%9){
+      4: sw_ivolga0_mot_rev;
+      7: sw_ivolga0_mot_2_rev;
+      sw_ivolga0_wag_rev;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga0_panto_placer_2_main, vehicle_is_reversed){
+      1: sw_ivolga0_panto_placer_2_rev;
+      sw_ivolga0_panto_placer_2;
+    }
+  //panto placer 3 (6-7)
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_panto_placer_3,position_in_consist%18){
+      4: sw_ivolga0_mot;
+      10: sw_ivolga0_mot;
+      13: sw_ivolga0_mot_2;
+      sw_ivolga0_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_panto_placer_3_rev,position_in_consist_from_end%18){
+      4: sw_ivolga0_mot_rev;
+      10: sw_ivolga0_mot_rev;
+      13: sw_ivolga0_mot_2_rev;
+      sw_ivolga0_wag_rev;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga0_panto_placer_3_main, vehicle_is_reversed){
+      1: sw_ivolga0_panto_placer_3_rev;
+      sw_ivolga0_panto_placer_3;
+    }
+  //panto placer 4 (6+5)
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_panto_placer_4,position_in_consist%27){
+      4: sw_ivolga0_mot;
+      10: sw_ivolga0_mot;
+      13: sw_ivolga0_mot_2;
+      16: sw_ivolga0_end_f;
+      19: sw_ivolga0_front_f;
+      22: sw_ivolga0_mot;
+      25: sw_ivolga0_mot_2;
+      sw_ivolga0_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_panto_placer_4_rev,position_in_consist_from_end%27){
+      4: sw_ivolga0_mot_rev;
+      10: sw_ivolga0_mot_rev;
+      13: sw_ivolga0_mot_2_rev;
+      16: sw_ivolga0_front_f;
+      19: sw_ivolga0_end_f;
+      22: sw_ivolga0_mot_rev;
+      25: sw_ivolga0_mot_2_rev;
+      sw_ivolga0_wag_rev;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga0_panto_placer_4_main, vehicle_is_reversed){
+      1: sw_ivolga0_panto_placer_4_rev;
+      sw_ivolga0_panto_placer_4;
+    }
+  //panto placer 5 (11)
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_panto_placer_5,position_in_consist%27){
+      7: sw_ivolga0_mot;
+      13: sw_ivolga0_mot;
+      16: sw_ivolga0_mot_d;
+      19: sw_ivolga0_mot_2;
+      25: sw_ivolga0_mot_2;
+      sw_ivolga0_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_panto_placer_5_rev,position_in_consist_from_end%27){
+      7: sw_ivolga0_mot_rev;
+      13: sw_ivolga0_mot_rev;
+      16: sw_ivolga0_mot_d_rev;
+      19: sw_ivolga0_mot_2_rev;
+      25: sw_ivolga0_mot_2_rev;
+      sw_ivolga0_wag_rev;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga0_panto_placer_5_main, vehicle_is_reversed){
+      1: sw_ivolga0_panto_placer_5_rev;
+      sw_ivolga0_panto_placer_5;
+    }
+  //panto controller
+    random_switch(FEAT_TRAINS, PARENT, sw_ivolga0_panto_placer_1_main_r){
+      1:sw_ivolga0_panto_placer_1_main;
+      1:sw_ivolga0_panto_placer_2_main;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga0_panto_placer_45_main, build_year<2016&&num_vehs_in_consist>30){
+      1:sw_ivolga0_panto_placer_4_main;
+      sw_ivolga0_panto_placer_5_main;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga0_panto_placer_main, num_vehs_in_consist){
+      0..15:sw_ivolga0_panto_placer_1_main_r;
+      16..19:sw_ivolga0_panto_placer_3_main;
+      sw_ivolga0_panto_placer_45_main;
+    }
+  //front end fixer
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_end_gfx,position_in_consist_from_end){
+      1: sw_ivolga0_end;
+      sw_ivolga0_panto_placer_main;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_lv,position_in_consist){
+      1: sw_ivolga0_front;
+      sw_ivolga0_end_gfx;
+    }
+//post fixers
+  //capacity-changer
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_capacity,position_in_consist_from_end){
+      0: 1;
+      1: 128;
+      2: 1;
+      192/3;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_capacity_main,position_in_consist){
+      0: 1;
+      1: 128;
+      2: 1;
+      default: sw_ivolga0_capacity;
+    }
+  //power fix
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_power_main,position_in_consist%33){
+      3:return 300; //2
+      9:return 300; //4
+      18:return 300; //7
+      21:return 300; //8
+      30:return 300; //11
+      return 0;
+    }
+//
+item(FEAT_TRAINS, ivolga0) {
+    property {
+        name: string(STR_ivolga0_NAME);
+        introduction_date: date(2014, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 30;
+        reliability_decay: 23;
+
+        cargo_capacity: 1;
+        loading_speed: param_loading_2D;
+        cost_factor: 23;
+        running_cost_factor: 53;
+
+        speed: 120 km/h;
+        track_type: T_D2;
+        power: 620 kW;
+        weight: 35 ton;
+
+        climates_available: ALL_CLIMATES;
+        ai_special_flag: AI_FLAG_PASSENGER;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_MU);
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        refit_cost: 0;
+        dual_headed: 0;
+        ai_engine_rank: 0;
+
+        running_cost_base: RUNNING_COST_ELECTRIC;
+        engine_class: ENGINE_CLASS_ELECTRIC;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        
+        tractive_effort_coefficient: 0.3;
+        air_drag_coefficient: 0.07;
+        bitmask_vehicle_info: 0;
+    }
+	graphics {
+        cargo_age_period:local_cargo_age;
+        power: sw_ivolga0_power_main()*4*1342/1000;
+        cargo_subtype_text:sw_empty_desc;
+        default: sw_ivolga0_lv;
+        purchase: ivolga0_purchase;
+        can_attach_wagon: sw_attach_vehid;
+        additional_text:    string(STR_CONCAT_7,
+                            string(STR_BROADGAUGE),
+                            string(STR_LOAD_SPEED,
+                            string(STR_2_DOOR),),
+                            string(STR_FORMATION),
+                            string(STR_ivolga0_DESC),
+                            string(STR_CARS),
+                            string(STR_USAGE,
+                            string(STR_COMMUTER),
+                            string(STR_DC),
+                            ),
+                            string(STR_OPERATOR,
+                            string(STR_CPPK),
+                            ),
+                        );
+        start_stop: sw_stop_start_3; 
+        cargo_capacity: sw_ivolga0_capacity_main;
+        purchase_cargo_capacity: 128;
+        length: sw_length_2_8_2;
+        articulated_part:sw_mucar_full_articulated_part;
+    }
+    livery_override(mu_car){
+      cargo_age_period:local_cargo_age;
+      cargo_subtype_text:sw_empty_desc;
+      loading_speed: param_loading_2D;
+      cargo_capacity: sw_ivolga0_capacity_main;
+      default:                      sw_ivolga0_lv;
+      power: sw_ivolga0_power_main()*4*1342/1000;
+      weight: 35;
+      length: sw_length_2_8_2;
+      articulated_part:sw_mucar_full_articulated_part;
+    }
+}
+# 1 "xUSSRplus.pnml" 163

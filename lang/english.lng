@@ -1,0 +1,57 @@
+##grflangid 0x00
+STR_NAME:xUSSR+ Ivolga Addon
+STR_DESC:{RED}xUSSR{GOLD}+{RED}Ivolga Addon{BLACK} introduces Russian EG2TV train "Ivolga".{}Sister set to {RED}xUSSR{BLACK}{}{}{TINYFONT}{GREEN}Drawn by{LTBLUE} Yozora{GREEN}{}Coded by{LTBLUE} Yozora{}{}{SILVER}GPLv2{}2024
+STR_GRF_URL: I love Hatsune Miku
+
+# *Errors
+STR_ATTACH_ERROR:Can only attach MU Cars
+STR_FEW_CARS_3_ERROR:Consist requires at least 3 cars
+
+# *Tech stuff (do not include these in translation files)
+STR_CONCAT_7:{STRING}{STRING}{STRING}{STRING}{STRING}{STRING}{STRING}
+
+# *Livery stuff
+# often used
+LV_DEFAULT: Default Livery
+LV_ORIGINAL: Original Livery
+# *Desc stuff
+# gauge
+STR_BROADGAUGE:{BLACK}Gauge:{GOLD} Broad (1,520mm){}
+
+# Loading Speed
+STR_LOAD_SPEED:{BLACK}Loading Speed: {GOLD}{STRING}{}
+STR_1_DOOR:1 Door
+STR_2_DOOR:2 Doors
+STR_3_DOOR:3 Doors
+
+# Formations
+STR_FORMATION:{BLACK}Real Formations: {GOLD}
+STR_CARS: cars{}
+# Usage
+STR_USAGE:{BLACK}Usage: {STRING} {STRING}{}
+
+STR_COMMUTER:{SILVER}Commuter
+STR_DC: {BLACK}/{RED} DC Type
+
+# Operator
+STR_OPERATOR:{BLACK}Operator: {STRING}
+
+# *operators
+STR_CPPK:{GREEN}Central Suburban Passenger Company
+STR_MTPPK:{LTBLUE}Moscow-Tver Suburban Passenger Company
+
+
+# mu_cars
+STR_MUCAR:xUSSR+ MU
+STR_MUCAR_DESC:{BLUE}Used to represent {GREEN}motor and trailer cars{BLUE} within a {GREEN}train {BLUE}formation.
+
+
+STR_ivolga0_NAME: EG2Tv "Ivolga 0.0"
+STR_ivolga1_NAME: EG2Tv "Ivolga 1.0"
+STR_ivolga2_NAME: EG2Tv "Ivolga 2.0"
+STR_ivolga3_NAME: EGE2Tv "Ivolga 3.0"
+STR_ivolga4_NAME: EGE2Tv "Ivolga 4.0"
+STR_ivolga0_DESC: 5
+STR_ivolga1_DESC: 6,11
+STR_ivolga2_DESC: 7,11
+STR_ivolga34_DESC: 11
