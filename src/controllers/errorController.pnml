@@ -1,3 +1,6 @@
-//TODO checks for xUSSR Tracks
-
+//checks for xUSSR Tracks
+//checks for JapanSet Tracks
+if (((grf_future_status("Meo\B1") == 0) && (grf_future_status("Meo\B1") == 0))) {
+	error( WARNING, string(GRF_USSR));
+}
 

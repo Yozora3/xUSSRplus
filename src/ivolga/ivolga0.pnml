@@ -75,19 +75,27 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
         1: ivolga0_1_wag_rev;
         dummy_sprites;
     }
-    switch(FEAT_TRAINS, SELF, sw_ivolga0_1_front_f,position_in_articulated_veh % 3){
-        1: ivolga0_1_front_f;
-        dummy_sprites;
-    }
-    switch(FEAT_TRAINS, SELF, sw_ivolga0_1_end_f,position_in_articulated_veh % 3){
-        1: ivolga0_1_end_f;
-        dummy_sprites;
-    }
+    // switch(FEAT_TRAINS, SELF, sw_ivolga0_1_front_f,position_in_articulated_veh % 3){
+    //     1: ivolga0_1_front_f;
+    //     dummy_sprites;
+    // }
+    // switch(FEAT_TRAINS, SELF, sw_ivolga0_1_end_f,position_in_articulated_veh % 3){
+    //     1: ivolga0_1_end_f;
+    //     dummy_sprites;
+    // }
   //gfx car logic
     //wag
-    switch(FEAT_TRAINS, SELF, sw_ivolga0_1_wag_gfx,position_in_consist>(num_vehs_in_consist/2)){
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_1_wag_gfx_1,position_in_consist>(num_vehs_in_consist/2)){
       1: sw_ivolga0_1_wag_rev;
       sw_ivolga0_1_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_1_wag_gfx_1_rev,position_in_consist_from_end>(num_vehs_in_consist/2)){
+      1: sw_ivolga0_1_wag;
+      sw_ivolga0_1_wag_rev;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga0_1_wag_gfx,vehicle_is_reversed){
+      1: sw_ivolga0_1_wag_gfx_1_rev;
+      sw_ivolga0_1_wag_gfx_1;
     }
     //mot 1
     switch(FEAT_TRAINS, SELF, sw_ivolga0_1_mot_gfx_1,position_in_consist>(num_vehs_in_consist/2)){
@@ -105,7 +113,7 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
     //mot 2
     switch(FEAT_TRAINS, SELF, sw_ivolga0_1_mot_2_gfx_1,position_in_consist>(num_vehs_in_consist/2)){
       1: sw_ivolga0_1_mot_rev;
-      sw_ivolga0_1_mot;
+      sw_ivolga0_1_mot_2;
     }
     switch(FEAT_TRAINS, SELF, sw_ivolga0_1_mot_2_gfx_1_rev,position_in_consist_from_end>(num_vehs_in_consist/2)){
       1: sw_ivolga0_1_mot;
@@ -356,7 +364,7 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       1:sw_ivolga0_2_panto_placer_1_main;
       1:sw_ivolga0_2_panto_placer_2_main;
     }
-    switch(FEAT_TRAINS, PARENT, sw_ivolga0_2_panto_placer_45_main, build_year<2016&&num_vehs_in_consist>30){
+    switch(FEAT_TRAINS, PARENT, sw_ivolga0_2_panto_placer_45_main, build_year<2019&&num_vehs_in_consist>30){
       1:sw_ivolga0_2_panto_placer_4_main;
       sw_ivolga0_2_panto_placer_5_main;
     }
@@ -415,12 +423,12 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       return 0;
     }
 //
-item(FEAT_TRAINS, ivolga0) {
+item(FEAT_TRAINS, ivolga0, 100) {
     property {
         name: string(STR_ivolga0_NAME);
         introduction_date: date(2014, 1, 1);
         model_life: VEHICLE_NEVER_EXPIRES;
-        vehicle_life: 30;
+        vehicle_life: 40;
         reliability_decay: 23;
 
         cargo_capacity: 1;
