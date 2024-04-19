@@ -1,0 +1,12 @@
+//prevents unrealistic consists
+switch (FEAT_TRAINS, SELF, sw_stop_start_3, num_vehs_in_consist < 9) {				
+			1:  return string(STR_FEW_CARS_3_ERROR); 				
+			return CB_RESULT_NO_TEXT; 
+		}
+
+//Prevents attaching anything but emu unit.
+switch(FEAT_TRAINS, SELF, sw_attach_vehid, vehicle_type_id) {
+  mu_car: CB_RESULT_ATTACH_ALLOW;
+  return string(STR_ATTACH_ERROR);
+}
+

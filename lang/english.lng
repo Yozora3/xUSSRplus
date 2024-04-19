@@ -1,7 +1,7 @@
 ##grflangid 0x00
 STR_NAME:xUSSR+ Ivolga Addon
-STR_DESC:{RED}xUSSR{GOLD}+{RED}Ivolga Addon{BLACK} introduces Russian EG2TV train "Ivolga".{}Sister set to {RED}xUSSR{BLACK}{}{}{TINYFONT}{GREEN}Drawn by{LTBLUE} Yozora{GREEN}{}Coded by{LTBLUE} Yozora{}{}{SILVER}GPLv2{}2024
-STR_GRF_URL: I love Hatsune Miku
+STR_DESC:{RED}xUSSR{GOLD}+{RED}Ivolga Addon{BLACK} introduces modern Russian train EG2TV "Ivolga".{}Sister set to {RED}xUSSR{BLACK}{}{}{TINYFONT}{GREEN}Drawn by{LTBLUE} Yozora{GREEN}{}Coded by{LTBLUE} Yozora{}{}{SILVER}GPLv2{}2024
+STR_GRF_URL:https://github.com/Yozora3/xUSSRplus
 
 # *Errors
 STR_ATTACH_ERROR:Can only attach MU Cars
@@ -12,6 +12,7 @@ STR_CONCAT_7:{STRING}{STRING}{STRING}{STRING}{STRING}{STRING}{STRING}
 
 # *Livery stuff
 # often used
+LV_RANDOM: Auto-Timed/Randomized Livery
 LV_DEFAULT: Default Livery
 LV_ORIGINAL: Original Livery
 # *Desc stuff

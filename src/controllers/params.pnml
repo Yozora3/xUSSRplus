@@ -1,0 +1,8 @@
+
+local_cargo_age = 185; // Metro/commuter service. 
+express_cargo_age = 231; // Express and Q/reserved seat cars. Tickets cost more.
+ltd_express_cargo_age = 278; // only limited expresses. High ticket cost.
+
+param_loading_1D = 10; // 1 door //
+param_loading_2D = 20; // 2 doors //
+param_loading_3D = 30; // 3 doors //
