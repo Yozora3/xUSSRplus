@@ -414,7 +414,7 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       default: sw_ivolga0_capacity;
     }
   //power fix
-    switch(FEAT_TRAINS, SELF, sw_ivolga0_power_main,position_in_consist_from_end%33){
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_power_main,position_in_consist%33){
       3:return 300; //2
       9:return 300; //4
       18:return 300; //7
@@ -422,7 +422,6 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       30:return 300; //11
       return 0;
     }
-  //weight fix
 //
 item(FEAT_TRAINS, ivolga0, 100) {
     property {
