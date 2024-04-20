@@ -202,7 +202,7 @@ item(FEAT_TRAINS, ivolga2, 102) {
 	graphics {
         purchase_weight: 57;
         cargo_age_period:local_cargo_age;
-        power: sw_ivolga1_power_main()*4*1342/1000;
+        power: sw_ivolga0_power_main()*4*1342/1000;
         cargo_subtype_text:sw_empty_desc;
         default: sw_ivolga2_lv;
         purchase: ivolga2_purchase;
@@ -234,7 +234,7 @@ item(FEAT_TRAINS, ivolga2, 102) {
       loading_speed: param_loading_2D;
       cargo_capacity: sw_ivolga1_capacity_main;
       default:                      sw_ivolga2_lv;
-      power: sw_ivolga1_power_main()*4*1342/1000;
+      power: sw_ivolga0_power_main()*4*1342/1000;
       weight: 56;
       length: sw_length_2_8_2;
       articulated_part:sw_mucar_full_articulated_part;

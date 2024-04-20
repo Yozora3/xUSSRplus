@@ -401,15 +401,6 @@ spriteset (ivolga1_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       2: 1;
       default: sw_ivolga1_capacity;
     }
-  //power fix
-    switch(FEAT_TRAINS, SELF, sw_ivolga1_power_main,position_in_consist%33){
-      3:return 300; //2
-      9:return 300; //4
-      18:return 300; //7
-      21:return 300; //8
-      30:return 300; //11
-      return 0;
-    }
 //
 item(FEAT_TRAINS, ivolga1, 101) {
     property {
@@ -450,7 +441,7 @@ item(FEAT_TRAINS, ivolga1, 101) {
     }
 	graphics {
         cargo_age_period:local_cargo_age;
-        power: sw_ivolga1_power_main()*4*1342/1000;
+        power: sw_ivolga0_power_main()*4*1342/1000;
         cargo_subtype_text:sw_ivolga1_lv_desc;
         default: sw_ivolga1_lv;
         purchase: ivolga1_purchase;
@@ -482,7 +473,7 @@ item(FEAT_TRAINS, ivolga1, 101) {
       loading_speed: param_loading_2D;
       cargo_capacity: sw_ivolga1_capacity_main;
       default:                      sw_ivolga1_lv;
-      power: sw_ivolga1_power_main()*4*1342/1000;
+      power: sw_ivolga0_power_main()*4*1342/1000;
       weight: 35;
       length: sw_length_2_8_2;
       articulated_part:sw_mucar_full_articulated_part;
