@@ -414,7 +414,7 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       default: sw_ivolga0_capacity;
     }
   //power fix
-    switch(FEAT_TRAINS, SELF, sw_ivolga0_power_main,position_in_consist%33){
+    switch(FEAT_TRAINS, SELF, sw_ivolga0_power_main,position_in_consist_from_end%33){
       3:return 300; //2
       9:return 300; //4
       18:return 300; //7
@@ -422,6 +422,7 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       30:return 300; //11
       return 0;
     }
+  //weight fix
 //
 item(FEAT_TRAINS, ivolga0, 100) {
     property {
@@ -439,7 +440,7 @@ item(FEAT_TRAINS, ivolga0, 100) {
         speed: 120 km/h;
         track_type: T_D2;
         power: 620 kW;
-        weight: 35 ton;
+        weight: 57 ton;
 
         climates_available: ALL_CLIMATES;
         ai_special_flag: AI_FLAG_PASSENGER;
@@ -494,7 +495,7 @@ item(FEAT_TRAINS, ivolga0, 100) {
       cargo_capacity: sw_ivolga0_capacity_main;
       default:                      sw_ivolga0_lv;
       power: sw_ivolga0_power_main()*4*1342/1000;
-      weight: 35;
+      weight: 55;
       length: sw_length_2_8_2;
       articulated_part:sw_mucar_full_articulated_part;
     }
