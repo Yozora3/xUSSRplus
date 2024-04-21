@@ -207,8 +207,11 @@ item(FEAT_TRAINS, ivolga2, 102) {
         default: sw_ivolga2_lv;
         purchase: ivolga2_purchase;
         can_attach_wagon: sw_attach_vehid;
-        additional_text:    string(STR_CONCAT_7,
+        additional_text:    string(STR_CONCAT_6,
                             string(STR_BROADGAUGE),
+                            string(STR_ELECTRIC,
+                            string(STR_DC),
+                            ),
                             string(STR_LOAD_SPEED,
                             string(STR_2_DOOR),),
                             string(STR_FORMATION),
@@ -216,11 +219,9 @@ item(FEAT_TRAINS, ivolga2, 102) {
                             string(STR_CARS),
                             string(STR_USAGE,
                             string(STR_COMMUTER),
-                            string(STR_DC),
                             ),
-                            string(STR_OPERATOR,
-                            string(STR_CPPK),
-                            ),
+                            
+
                         );
         start_stop: sw_stop_start_3; 
         cargo_capacity: sw_ivolga1_capacity_main;

@@ -141,21 +141,6 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       1: sw_ivolga0_1_panto_placer_1_rev;
       sw_ivolga0_1_panto_placer_1;
     }
-  //panto placer 2 (5)
-    switch(FEAT_TRAINS, SELF, sw_ivolga0_1_panto_placer_2,position_in_consist%9){
-      4: sw_ivolga0_1_mot_gfx;
-      7: sw_ivolga0_1_mot_gfx;
-      sw_ivolga0_1_wag_gfx;
-    }
-    switch(FEAT_TRAINS, SELF, sw_ivolga0_1_panto_placer_2_rev,position_in_consist_from_end%9){
-      4: sw_ivolga0_1_mot_gfx;
-      7: sw_ivolga0_1_mot_gfx;
-      sw_ivolga0_1_wag_gfx;
-    }
-    switch(FEAT_TRAINS, PARENT, sw_ivolga0_1_panto_placer_2_main, vehicle_is_reversed){
-      1: sw_ivolga0_1_panto_placer_2_rev;
-      sw_ivolga0_1_panto_placer_2;
-    }
   //panto placer 3 (6-7)
     switch(FEAT_TRAINS, SELF, sw_ivolga0_1_panto_placer_3,position_in_consist%18){
       4: sw_ivolga0_1_mot_gfx;
@@ -195,12 +180,8 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       sw_ivolga0_1_panto_placer_5;
     }
   //panto controller
-    random_switch(FEAT_TRAINS, PARENT, sw_ivolga0_1_panto_placer_1_main_r){
-      1:sw_ivolga0_1_panto_placer_1_main;
-      1:sw_ivolga0_1_panto_placer_2_main;
-    }
     switch(FEAT_TRAINS, PARENT, sw_ivolga0_1_panto_placer_main, num_vehs_in_consist){
-      0..15:sw_ivolga0_1_panto_placer_1_main_r;
+      0..15:sw_ivolga0_1_panto_placer_1_main;
       16..19:sw_ivolga0_1_panto_placer_3_main;
       sw_ivolga0_1_panto_placer_5_main;
     }
@@ -263,23 +244,6 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
     switch(FEAT_TRAINS, SELF, sw_ivolga0_2_end_f,position_in_articulated_veh % 3){
         1: ivolga0_2_end_f;
         dummy_sprites;
-    }
-  //panto placer 1 (5)
-    switch(FEAT_TRAINS, SELF, sw_ivolga0_2_panto_placer_1,position_in_consist%12){
-      4: sw_ivolga0_2_mot;
-      7: sw_ivolga0_2_mot_d;
-      10: sw_ivolga0_2_mot_2;
-      sw_ivolga0_2_wag;
-    }
-    switch(FEAT_TRAINS, SELF, sw_ivolga0_2_panto_placer_1_rev,position_in_consist_from_end%12){
-      4: sw_ivolga0_2_mot_rev;
-      7: sw_ivolga0_2_mot_d_rev;
-      10: sw_ivolga0_2_mot_2_rev;
-      sw_ivolga0_2_wag_rev;
-    }
-    switch(FEAT_TRAINS, PARENT, sw_ivolga0_2_panto_placer_1_main, vehicle_is_reversed){
-      1: sw_ivolga0_2_panto_placer_1_rev;
-      sw_ivolga0_2_panto_placer_1;
     }
   //panto placer 2 (5)
     switch(FEAT_TRAINS, SELF, sw_ivolga0_2_panto_placer_2,position_in_consist%9){
@@ -360,16 +324,12 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       sw_ivolga0_2_panto_placer_5;
     }
   //panto controller
-    random_switch(FEAT_TRAINS, PARENT, sw_ivolga0_2_panto_placer_1_main_r){
-      1:sw_ivolga0_2_panto_placer_1_main;
-      1:sw_ivolga0_2_panto_placer_2_main;
-    }
     switch(FEAT_TRAINS, PARENT, sw_ivolga0_2_panto_placer_45_main, build_year<2019&&num_vehs_in_consist>30){
       1:sw_ivolga0_2_panto_placer_4_main;
       sw_ivolga0_2_panto_placer_5_main;
     }
     switch(FEAT_TRAINS, PARENT, sw_ivolga0_2_panto_placer_main, num_vehs_in_consist){
-      0..15:sw_ivolga0_2_panto_placer_1_main_r;
+      0..15:sw_ivolga0_2_panto_placer_2_main;
       16..19:sw_ivolga0_2_panto_placer_3_main;
       sw_ivolga0_2_panto_placer_45_main;
     }
@@ -466,8 +426,11 @@ item(FEAT_TRAINS, ivolga0, 100) {
         default: sw_ivolga0_lv;
         purchase: ivolga0_purchase;
         can_attach_wagon: sw_attach_vehid;
-        additional_text:    string(STR_CONCAT_7,
+        additional_text:    string(STR_CONCAT_6,
                             string(STR_BROADGAUGE),
+                            string(STR_ELECTRIC,
+                            string(STR_DC),
+                            ),
                             string(STR_LOAD_SPEED,
                             string(STR_2_DOOR),),
                             string(STR_FORMATION),
@@ -475,11 +438,9 @@ item(FEAT_TRAINS, ivolga0, 100) {
                             string(STR_CARS),
                             string(STR_USAGE,
                             string(STR_COMMUTER),
-                            string(STR_DC),
                             ),
-                            string(STR_OPERATOR,
-                            string(STR_CPPK),
-                            ),
+                            
+
                         );
         start_stop: sw_stop_start_3; 
         cargo_capacity: sw_ivolga0_capacity_main;

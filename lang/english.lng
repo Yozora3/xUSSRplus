@@ -10,7 +10,7 @@ STR_FEW_CARS_3_ERROR:Consist requires at least 3 cars
 GRF_USSR:{WHITE}Please use {YELLOW}xUSSR Rails Set {WHITE}for the best game experience.
 
 # *Tech stuff (do not include these in translation files)
-STR_CONCAT_7:{STRING}{STRING}{STRING}{STRING}{STRING}{STRING}{STRING}
+STR_CONCAT_6:{STRING}{STRING}{STRING}{STRING}{STRING}{STRING}{STRING}
 
 # *Desc stuff
 # gauge
@@ -25,17 +25,21 @@ STR_3_DOOR:3 Doors
 # Formations
 STR_FORMATION:{BLACK}Real Formations: {GOLD}
 STR_CARS: cars{}
+
+# Voltage
+STR_ELECTRIC:{BLACK}Electric System: {STRING}{}
+
+STR_DC:{RED}DC 3KV
 # Usage
-STR_USAGE:{BLACK}Usage: {STRING} {STRING}{}
+STR_USAGE:{BLACK}Usage: {STRING}{}
 
 STR_COMMUTER:{SILVER}Commuter
-STR_DC: {BLACK}/{RED} DC Type
 
 # Operator
 STR_OPERATOR:{BLACK}Operator: {STRING}
 
-# *operators
-STR_CPPK:{GREEN}Central Suburban Passenger Company
+# *operators (not used)
+STR_CPPK_MTPPK:{GREEN}Central/{LTBLUE}Moscow-Tver Suburban Passenger Company
 STR_MTPPK:{LTBLUE}Moscow-Tver Suburban Passenger Company
 
 # *Livery names
