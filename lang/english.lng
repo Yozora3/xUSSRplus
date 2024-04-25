@@ -56,13 +56,13 @@ LV_GREY_DOOR: Grey Doors Livery
 STR_MUCAR:EG2Tv "Ivolga" Car
 STR_MUCAR_DESC:{BLUE}Used to represent {GREEN}motor and trailer cars{BLUE} within an {GREEN}Ivolga {BLUE}formation.
 
-
 STR_ivolga0_NAME:EG2Tv "Ivolga 0.0"
 STR_ivolga1_NAME:EG2Tv "Ivolga 1.0"
 STR_ivolga2_NAME:EG2Tv "Ivolga 2.0"
 STR_ivolga3_NAME:EGE2Tv "Ivolga 3.0"
 STR_ivolga4_NAME:EGE2Tv "Ivolga 4.0"
+
 STR_ivolga0_DESC:5
-STR_ivolga1_DESC:6,11
+STR_ivolga1_DESC:5,6,11
 STR_ivolga2_DESC:7,11
 STR_ivolga34_DESC:11

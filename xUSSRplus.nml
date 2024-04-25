@@ -1601,46 +1601,38 @@ item(FEAT_TRAINS, ivolga3, 103) {
 # 1 "src/ivolga/ivolga4.pnml" 1
 spriteset (ivolga4_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,      "gfx/ivolga/ivolga4_purchase.png") { tmpl_purchase(0, 0) }
 //blue doors
-spriteset (ivolga4_1_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 0) }
-spriteset (ivolga4_1_end, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 37) }
-spriteset (ivolga4_1_mot_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 74) }
-spriteset (ivolga4_1_mot_d_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 74) }
-spriteset (ivolga4_1_mot, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 111) }
-spriteset (ivolga4_1_mot_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 111) }
-spriteset (ivolga4_1_mot_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 148) }
-spriteset (ivolga4_1_mot_2_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 148) }
-spriteset (ivolga4_1_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 185) }
-spriteset (ivolga4_1_front_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 222) }
-spriteset (ivolga4_1_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 222) }
+  spriteset (ivolga4_1_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 0) }
+  spriteset (ivolga4_1_end, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 37) }
+  spriteset (ivolga4_1_mot_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 74) }
+  spriteset (ivolga4_1_mot_d_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 74) }
+  spriteset (ivolga4_1_mot, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 111) }
+  spriteset (ivolga4_1_mot_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 111) }
+  spriteset (ivolga4_1_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 148) }
+  spriteset (ivolga4_1_front_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 185) }
+  spriteset (ivolga4_1_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 185) }
 
-spriteset (ivolga4_1_mcd_mot_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std_rev(0, 0) }
-spriteset (ivolga4_1_mcd_mot_d_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std(0, 0) }
-spriteset (ivolga4_1_mcd_mot, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std(0, 37) }
-spriteset (ivolga4_1_mcd_mot_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std_rev(0, 37) }
-spriteset (ivolga4_1_mcd_mot_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std(0, 74) }
-spriteset (ivolga4_1_mcd_mot_2_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std_rev(0, 74) }
-spriteset (ivolga4_1_mcd_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std(0, 111) }
+  spriteset (ivolga4_1_mcd_mot_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std_rev(0, 0) }
+  spriteset (ivolga4_1_mcd_mot_d_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std(0, 0) }
+  spriteset (ivolga4_1_mcd_mot, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std(0, 37) }
+  spriteset (ivolga4_1_mcd_mot_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std_rev(0, 37) }
+  spriteset (ivolga4_1_mcd_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std(0, 74) }
 //grey doors
-spriteset (ivolga4_2_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 0) }
-spriteset (ivolga4_2_end, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 37) }
-spriteset (ivolga4_2_mot_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 74) }
-spriteset (ivolga4_2_mot_d_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 74) }
-spriteset (ivolga4_2_mot, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 111) }
-spriteset (ivolga4_2_mot_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 111) }
-spriteset (ivolga4_2_mot_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 148) }
-spriteset (ivolga4_2_mot_2_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 148) }
-spriteset (ivolga4_2_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 185) }
-spriteset (ivolga4_2_front_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 222) }
-spriteset (ivolga4_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 222) }
+  spriteset (ivolga4_2_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 0) }
+  spriteset (ivolga4_2_end, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 37) }
+  spriteset (ivolga4_2_mot_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 74) }
+  spriteset (ivolga4_2_mot_d_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 74) }
+  spriteset (ivolga4_2_mot, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 111) }
+  spriteset (ivolga4_2_mot_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 111) }
+  spriteset (ivolga4_2_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 148) }
+  spriteset (ivolga4_2_front_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 185) }
+  spriteset (ivolga4_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 185) }
 
-spriteset (ivolga4_2_mcd_mot_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std_rev(0, 0) }
-spriteset (ivolga4_2_mcd_mot_d_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std(0, 0) }
-spriteset (ivolga4_2_mcd_mot, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std(0, 37) }
-spriteset (ivolga4_2_mcd_mot_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std_rev(0, 37) }
-spriteset (ivolga4_2_mcd_mot_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std(0, 74) }
-spriteset (ivolga4_2_mcd_mot_2_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std_rev(0, 74) }
-spriteset (ivolga4_2_mcd_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std(0, 111) }
-
+  spriteset (ivolga4_2_mcd_mot_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std_rev(0, 0) }
+  spriteset (ivolga4_2_mcd_mot_d_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std(0, 0) }
+  spriteset (ivolga4_2_mcd_mot, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std(0, 37) }
+  spriteset (ivolga4_2_mcd_mot_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std_rev(0, 37) }
+  spriteset (ivolga4_2_mcd_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std(0, 74) }
+//
 //*livery 1
   //gfx logic
     switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_d_gfx_1,position_in_consist % 6){
@@ -1654,19 +1646,6 @@ spriteset (ivolga4_2_mcd_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/
     switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_mot_d_gfx,vehicle_is_reversed){
         1: sw_ivolga4_1_mot_d_gfx_2;
         sw_ivolga4_1_mot_d_gfx_1;
-    }
-
-    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_d_rev_gfx_1,position_in_consist % 6){
-        1: ivolga4_1_mot_d_rev;
-        4: ivolga4_1_mcd_mot_d_rev;
-    }
-    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_d_rev_gfx_2,position_in_consist_from_end % 6){
-        1: ivolga4_1_mot_d;
-        4: ivolga4_1_mcd_mot_d;
-    }
-    switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_mot_d_rev_gfx,vehicle_is_reversed){
-        1: sw_ivolga4_1_mot_d_rev_gfx_2;
-        sw_ivolga4_1_mot_d_rev_gfx_1;
     }
 
     switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_gfx_1,position_in_consist % 6){
@@ -1755,7 +1734,7 @@ spriteset (ivolga4_2_mcd_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/
       1: sw_ivolga4_1_panto_placer_2_rev;
       sw_ivolga4_1_panto_placer_2;
     }
-  //panto placer 3 (6-7)
+  //panto placer 3 (6-8)/
     switch(FEAT_TRAINS, SELF, sw_ivolga4_1_panto_placer_3,position_in_consist%18){
       4: sw_ivolga4_1_mot;
       10: sw_ivolga4_1_mot;
@@ -1793,11 +1772,33 @@ spriteset (ivolga4_2_mcd_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/
       1: sw_ivolga4_1_panto_placer_5_rev;
       sw_ivolga4_1_panto_placer_5;
     }
+  //panto placer 6 (14+)
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_panto_placer_6,position_in_consist%21){
+      1: sw_ivolga4_1_front_f;
+      4: sw_ivolga4_1_mot;
+      10: sw_ivolga4_1_mot;
+      13: sw_ivolga4_1_mot_rev;
+      19: sw_ivolga4_1_end_f;
+      sw_ivolga4_1_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_panto_placer_6_rev,position_in_consist_from_end%21){
+      1: sw_ivolga4_1_front_f;
+      4: sw_ivolga4_1_mot;
+      10: sw_ivolga4_1_mot;
+      13: sw_ivolga4_1_mot_rev;
+      19: sw_ivolga4_1_end_f;
+      sw_ivolga4_1_wag;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_panto_placer_6_main, vehicle_is_reversed){
+      1: sw_ivolga4_1_panto_placer_6_rev;
+      sw_ivolga4_1_panto_placer_6;
+    }
   //panto controller
     switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_panto_placer_main, num_vehs_in_consist){
       0..15:sw_ivolga4_1_panto_placer_2_main;
-      16..19:sw_ivolga4_1_panto_placer_3_main;
-      sw_ivolga4_1_panto_placer_5_main;
+      16..22:sw_ivolga4_1_panto_placer_3_main;
+      23..39:sw_ivolga4_1_panto_placer_5_main;
+      sw_ivolga4_1_panto_placer_6_main;
     }
   //front end fixer
     switch(FEAT_TRAINS, SELF, sw_ivolga4_1_end_gfx,position_in_consist_from_end){
@@ -1822,19 +1823,6 @@ spriteset (ivolga4_2_mcd_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/
     switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_mot_d_gfx,vehicle_is_reversed){
         1: sw_ivolga4_2_mot_d_gfx_2;
         sw_ivolga4_2_mot_d_gfx_1;
-    }
-
-    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot_d_rev_gfx_1,position_in_consist % 6){
-        1: ivolga4_2_mot_d_rev;
-        4: ivolga4_2_mcd_mot_d_rev;
-    }
-    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot_d_rev_gfx_2,position_in_consist_from_end % 6){
-        1: ivolga4_2_mot_d;
-        4: ivolga4_2_mcd_mot_d;
-    }
-    switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_mot_d_rev_gfx,vehicle_is_reversed){
-        1: sw_ivolga4_2_mot_d_rev_gfx_2;
-        sw_ivolga4_2_mot_d_rev_gfx_1;
     }
 
     switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot_gfx_1,position_in_consist % 6){
@@ -1923,7 +1911,7 @@ spriteset (ivolga4_2_mcd_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/
       1: sw_ivolga4_2_panto_placer_2_rev;
       sw_ivolga4_2_panto_placer_2;
     }
-  //panto placer 3 (6-7)
+  //panto placer 3 (6-8)/
     switch(FEAT_TRAINS, SELF, sw_ivolga4_2_panto_placer_3,position_in_consist%18){
       4: sw_ivolga4_2_mot;
       10: sw_ivolga4_2_mot;
@@ -1961,11 +1949,33 @@ spriteset (ivolga4_2_mcd_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/
       1: sw_ivolga4_2_panto_placer_5_rev;
       sw_ivolga4_2_panto_placer_5;
     }
+  //panto placer 6 (14+)
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_panto_placer_6,position_in_consist%21){
+      1: sw_ivolga4_2_front_f;
+      4: sw_ivolga4_2_mot;
+      10: sw_ivolga4_2_mot;
+      13: sw_ivolga4_2_mot_rev;
+      19: sw_ivolga4_2_end_f;
+      sw_ivolga4_2_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_panto_placer_6_rev,position_in_consist_from_end%21){
+      1: sw_ivolga4_2_front_f;
+      4: sw_ivolga4_2_mot;
+      10: sw_ivolga4_2_mot;
+      13: sw_ivolga4_2_mot_rev;
+      19: sw_ivolga4_2_end_f;
+      sw_ivolga4_2_wag;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_panto_placer_6_main, vehicle_is_reversed){
+      1: sw_ivolga4_2_panto_placer_6_rev;
+      sw_ivolga4_2_panto_placer_6;
+    }
   //panto controller
     switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_panto_placer_main, num_vehs_in_consist){
       0..15:sw_ivolga4_2_panto_placer_2_main;
-      16..19:sw_ivolga4_2_panto_placer_3_main;
-      sw_ivolga4_2_panto_placer_5_main;
+      16..22:sw_ivolga4_2_panto_placer_3_main;
+      23..39:sw_ivolga4_2_panto_placer_5_main;
+      sw_ivolga4_2_panto_placer_6_main;
     }
   //front end fixer
     switch(FEAT_TRAINS, SELF, sw_ivolga4_2_end_gfx,position_in_consist_from_end){
@@ -1977,6 +1987,7 @@ spriteset (ivolga4_2_mcd_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/
       sw_ivolga4_2_end_gfx;
     }
 //
+
 //liveries
 random_switch(FEAT_TRAINS, PARENT, sw_ivolga4_livery_0){
   2:sw_ivolga4_livery_1;
