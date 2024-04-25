@@ -20,3 +20,4 @@ grf {
 #include "src/ivolga/ivolga1.pnml"
 #include "src/ivolga/ivolga2.pnml"
 #include "src/ivolga/ivolga3.pnml"
+#include "src/ivolga/ivolga4.pnml"

@@ -18,8 +18,8 @@ item(FEAT_TRAINS, mu_car, 10000) {
                 model_life: VEHICLE_NEVER_EXPIRES;
                 vehicle_life: 60;
                 loading_speed: param_loading_3D;
-                cost_factor: 30;
-                running_cost_factor: 7;
+                cost_factor: 150;
+                running_cost_factor: 60;
                 speed: 0 km/h;
                 power: 0 hp;
                 cargo_capacity: 1;
@@ -33,7 +33,7 @@ item(FEAT_TRAINS, mu_car, 10000) {
 				track_type:T_D2;
                 ai_special_flag: AI_FLAG_PASSENGER;
                 running_cost_base: RUNNING_COST_ELECTRIC;
-                engine_class: ENGINE_CLASS_STEAM;
+                engine_class: ENGINE_CLASS_ELECTRIC;
                 visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
                 sprite_id: SPRITE_ID_NEW_TRAIN;
                 dual_headed: 0;
@@ -42,7 +42,7 @@ item(FEAT_TRAINS, mu_car, 10000) {
                 variant_group: ivolga0;
 }
  graphics {
-    cargo_subtype_text: sw_empty_desc;
+    // cargo_subtype_text: sw_empty_desc;
 		purchase:                     set_mu_car_purchase;
     additional_text:			        return string(STR_MUCAR_DESC);
     default: sw_mucar_gfx;

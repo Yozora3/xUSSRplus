@@ -95,31 +95,6 @@ spriteset (ivolga3_1_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       1: sw_ivolga3_1_panto_placer_3_rev;
       sw_ivolga3_1_panto_placer_3;
     }
-  //panto placer 4 (6+5)
-    switch(FEAT_TRAINS, SELF, sw_ivolga3_1_panto_placer_4,position_in_consist%30){
-      4: sw_ivolga3_1_mot;
-      10: sw_ivolga3_1_mot_d_rev;
-      13: sw_ivolga3_1_mot_2;
-      16: sw_ivolga3_1_end_f;
-      19: sw_ivolga3_1_front_f;
-      25: sw_ivolga3_1_mot_d_rev;
-      28: sw_ivolga3_1_mot_2;
-      sw_ivolga3_1_wag;
-    }
-    switch(FEAT_TRAINS, SELF, sw_ivolga3_1_panto_placer_4_rev,position_in_consist_from_end%30){
-      4: sw_ivolga3_1_mot_rev;
-      10: sw_ivolga3_1_mot_d;
-      13: sw_ivolga3_1_mot_2_rev;
-      16: sw_ivolga3_1_front_f;
-      19: sw_ivolga3_1_end_f;
-      25: sw_ivolga3_1_mot_d;
-      28: sw_ivolga3_1_mot_2_rev;
-      sw_ivolga3_1_wag_rev;
-    }
-    switch(FEAT_TRAINS, PARENT, sw_ivolga3_1_panto_placer_4_main, vehicle_is_reversed){
-      1: sw_ivolga3_1_panto_placer_4_rev;
-      sw_ivolga3_1_panto_placer_4;
-    }
   //panto placer 5 (11)
     switch(FEAT_TRAINS, SELF, sw_ivolga3_1_panto_placer_5,position_in_consist%30){
       7: sw_ivolga3_1_mot;
@@ -142,14 +117,10 @@ spriteset (ivolga3_1_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       sw_ivolga3_1_panto_placer_5;
     }
   //panto controller
-    switch(FEAT_TRAINS, PARENT, sw_ivolga3_1_panto_placer_45_main, build_year<2020&&num_vehs_in_consist>30){
-      1:sw_ivolga3_1_panto_placer_4_main;
-      sw_ivolga3_1_panto_placer_5_main;
-    }
     switch(FEAT_TRAINS, PARENT, sw_ivolga3_1_panto_placer_main, num_vehs_in_consist){
       0..15:sw_ivolga3_1_panto_placer_2_main;
       16..19:sw_ivolga3_1_panto_placer_3_main;
-      sw_ivolga3_1_panto_placer_45_main;
+      sw_ivolga3_1_panto_placer_5_main;
     }
   //front end fixer
     switch(FEAT_TRAINS, SELF, sw_ivolga3_1_end_gfx,position_in_consist_from_end){
@@ -172,8 +143,8 @@ item(FEAT_TRAINS, ivolga3, 103) {
 
         cargo_capacity: 1;
         loading_speed: param_loading_2D;
-        cost_factor: 23;
-        running_cost_factor: 53;
+        cost_factor: 75;
+        running_cost_factor: 60;
 
         speed: 160 km/h;
         track_type: T_D2;
@@ -203,7 +174,7 @@ item(FEAT_TRAINS, ivolga3, 103) {
         purchase_weight: 57;
         cargo_age_period:local_cargo_age;
         power: sw_ivolga0_power_main()*4*1342/1000;
-        cargo_subtype_text:sw_empty_desc;
+        // cargo_subtype_text: sw_empty_desc;
         default: sw_ivolga3_lv;
         purchase: ivolga3_purchase;
         can_attach_wagon: sw_attach_vehid;
@@ -231,7 +202,7 @@ item(FEAT_TRAINS, ivolga3, 103) {
     }
     livery_override(mu_car){
       cargo_age_period:local_cargo_age;
-      cargo_subtype_text:sw_empty_desc;
+      // cargo_subtype_text: sw_empty_desc;
       loading_speed: param_loading_2D;
       cargo_capacity: sw_ivolga1_capacity_main;
       default:                      sw_ivolga3_lv;

@@ -10,13 +10,21 @@ grf {
 
 # 1 "src/controllers/params.pnml" 1
 
-local_cargo_age = 185; // Metro/commuter service. 
-express_cargo_age = 231; // Express and Q/reserved seat cars. Tickets cost more.
-ltd_express_cargo_age = 278; // only limited expresses. High ticket cost.
+local_cargo_age = 135; // Metro/commuter service. 
+// express_cargo_age = 231; // Express and Q/reserved seat cars. Tickets cost more.
+// ltd_express_cargo_age = 278; // only limited expresses. High ticket cost.
 
-param_loading_1D = 10; // 1 door //
-param_loading_2D = 20; // 2 doors //
-param_loading_3D = 30; // 3 doors //
+param_loading_1D = 30; // 1 door //
+param_loading_2D = 60; // 2 doors //
+param_loading_3D = 80; // 3 doors //
+
+basecost {
+		// PR_BUILD_VEHICLE_TRAIN : 	param_buy -2;
+		// PR_BUILD_VEHICLE_WAGON: 	param_buy +3;
+		PR_BUILD_VEHICLE_WAGON: 	7;
+		// PR_RUNNING_TRAIN_DIESEL:	param_run +1;
+		// PR_RUNNING_TRAIN_ELECTRIC:	param_run +1;
+	}
 # 1 "xUSSRplus.pnml" 10
 # 1 "src/controllers/errorController.pnml" 1
 //checks for xUSSR Tracks
@@ -79,9 +87,9 @@ spriteset (dummy_sprites, "gfx/misc/empty.png")
 {
   [0, 0, 2, 2, 0, 0, CROP]
 }
-switch(FEAT_TRAINS, SELF, sw_empty_desc,cargo_subtype){
-  0:string(LV_DEFAULT);
-}
+// switch(FEAT_TRAINS, SELF, sw_empty_desc,cargo_subtype){
+//   0:string(LV_DEFAULT);
+// }
 switch (FEAT_TRAINS, SELF, sw_length_2_8_2, position_in_articulated_veh % 3) {
   0: return 2;
   1: return 8;
@@ -145,8 +153,8 @@ item(FEAT_TRAINS, mu_car, 10000) {
                 model_life: VEHICLE_NEVER_EXPIRES;
                 vehicle_life: 60;
                 loading_speed: param_loading_3D;
-                cost_factor: 30;
-                running_cost_factor: 7;
+                cost_factor: 150;
+                running_cost_factor: 60;
                 speed: 0 km/h;
                 power: 0 hp;
                 cargo_capacity: 1;
@@ -160,7 +168,7 @@ item(FEAT_TRAINS, mu_car, 10000) {
 				track_type:T_D2;
                 ai_special_flag: AI_FLAG_PASSENGER;
                 running_cost_base: RUNNING_COST_ELECTRIC;
-                engine_class: ENGINE_CLASS_STEAM;
+                engine_class: ENGINE_CLASS_ELECTRIC;
                 visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
                 sprite_id: SPRITE_ID_NEW_TRAIN;
                 dual_headed: 0;
@@ -169,7 +177,7 @@ item(FEAT_TRAINS, mu_car, 10000) {
                 variant_group: ivolga0;
 }
  graphics {
-    cargo_subtype_text: sw_empty_desc;
+    // cargo_subtype_text: sw_empty_desc;
 		purchase:                     set_mu_car_purchase;
     additional_text:			        return string(STR_MUCAR_DESC);
     default: sw_mucar_gfx;
@@ -533,7 +541,7 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
     0..2015:sw_ivolga0_livery_1;
     sw_ivolga0_livery_2;
   }
-  switch(FEAT_TRAINS, SELF, sw_ivolga0_lv,cargo_subtype){
+  switch(FEAT_TRAINS, PARENT, sw_ivolga0_lv,cargo_subtype){
     0:sw_ivolga0_livery_0;
     1:sw_ivolga0_livery_1;
     2:sw_ivolga0_livery_2;
@@ -577,8 +585,8 @@ item(FEAT_TRAINS, ivolga0, 100) {
 
         cargo_capacity: 1;
         loading_speed: param_loading_2D;
-        cost_factor: 23;
-        running_cost_factor: 53;
+        cost_factor: 75;
+        running_cost_factor: 60;
 
         speed: 120 km/h;
         track_type: T_D2;
@@ -1025,7 +1033,7 @@ spriteset (ivolga1_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
     0..2018:sw_ivolga1_livery_1;
     sw_ivolga1_livery_2;
   }
-  switch(FEAT_TRAINS, SELF, sw_ivolga1_lv,cargo_subtype){
+  switch(FEAT_TRAINS, PARENT, sw_ivolga1_lv,cargo_subtype){
     0:sw_ivolga1_livery_0;
     1:sw_ivolga1_livery_1;
     2:sw_ivolga1_livery_2;
@@ -1060,8 +1068,8 @@ item(FEAT_TRAINS, ivolga1, 101) {
 
         cargo_capacity: 1;
         loading_speed: param_loading_2D;
-        cost_factor: 23;
-        running_cost_factor: 53;
+        cost_factor: 75;
+        running_cost_factor: 60;
 
         speed: 120 km/h;
         track_type: T_D2;
@@ -1304,8 +1312,8 @@ item(FEAT_TRAINS, ivolga2, 102) {
 
         cargo_capacity: 1;
         loading_speed: param_loading_2D;
-        cost_factor: 23;
-        running_cost_factor: 53;
+        cost_factor: 75;
+        running_cost_factor: 60;
 
         speed: 120 km/h;
         track_type: T_D2;
@@ -1335,7 +1343,7 @@ item(FEAT_TRAINS, ivolga2, 102) {
         purchase_weight: 57;
         cargo_age_period:local_cargo_age;
         power: sw_ivolga0_power_main()*4*1342/1000;
-        cargo_subtype_text:sw_empty_desc;
+        // cargo_subtype_text: sw_empty_desc;
         default: sw_ivolga2_lv;
         purchase: ivolga2_purchase;
         can_attach_wagon: sw_attach_vehid;
@@ -1363,7 +1371,7 @@ item(FEAT_TRAINS, ivolga2, 102) {
     }
     livery_override(mu_car){
       cargo_age_period:local_cargo_age;
-      cargo_subtype_text:sw_empty_desc;
+      // cargo_subtype_text: sw_empty_desc;
       loading_speed: param_loading_2D;
       cargo_capacity: sw_ivolga1_capacity_main;
       default:                      sw_ivolga2_lv;
@@ -1472,31 +1480,6 @@ spriteset (ivolga3_1_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       1: sw_ivolga3_1_panto_placer_3_rev;
       sw_ivolga3_1_panto_placer_3;
     }
-  //panto placer 4 (6+5)
-    switch(FEAT_TRAINS, SELF, sw_ivolga3_1_panto_placer_4,position_in_consist%30){
-      4: sw_ivolga3_1_mot;
-      10: sw_ivolga3_1_mot_d_rev;
-      13: sw_ivolga3_1_mot_2;
-      16: sw_ivolga3_1_end_f;
-      19: sw_ivolga3_1_front_f;
-      25: sw_ivolga3_1_mot_d_rev;
-      28: sw_ivolga3_1_mot_2;
-      sw_ivolga3_1_wag;
-    }
-    switch(FEAT_TRAINS, SELF, sw_ivolga3_1_panto_placer_4_rev,position_in_consist_from_end%30){
-      4: sw_ivolga3_1_mot_rev;
-      10: sw_ivolga3_1_mot_d;
-      13: sw_ivolga3_1_mot_2_rev;
-      16: sw_ivolga3_1_front_f;
-      19: sw_ivolga3_1_end_f;
-      25: sw_ivolga3_1_mot_d;
-      28: sw_ivolga3_1_mot_2_rev;
-      sw_ivolga3_1_wag_rev;
-    }
-    switch(FEAT_TRAINS, PARENT, sw_ivolga3_1_panto_placer_4_main, vehicle_is_reversed){
-      1: sw_ivolga3_1_panto_placer_4_rev;
-      sw_ivolga3_1_panto_placer_4;
-    }
   //panto placer 5 (11)
     switch(FEAT_TRAINS, SELF, sw_ivolga3_1_panto_placer_5,position_in_consist%30){
       7: sw_ivolga3_1_mot;
@@ -1519,14 +1502,10 @@ spriteset (ivolga3_1_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       sw_ivolga3_1_panto_placer_5;
     }
   //panto controller
-    switch(FEAT_TRAINS, PARENT, sw_ivolga3_1_panto_placer_45_main, build_year<2020&&num_vehs_in_consist>30){
-      1:sw_ivolga3_1_panto_placer_4_main;
-      sw_ivolga3_1_panto_placer_5_main;
-    }
     switch(FEAT_TRAINS, PARENT, sw_ivolga3_1_panto_placer_main, num_vehs_in_consist){
       0..15:sw_ivolga3_1_panto_placer_2_main;
       16..19:sw_ivolga3_1_panto_placer_3_main;
-      sw_ivolga3_1_panto_placer_45_main;
+      sw_ivolga3_1_panto_placer_5_main;
     }
   //front end fixer
     switch(FEAT_TRAINS, SELF, sw_ivolga3_1_end_gfx,position_in_consist_from_end){
@@ -1549,8 +1528,8 @@ item(FEAT_TRAINS, ivolga3, 103) {
 
         cargo_capacity: 1;
         loading_speed: param_loading_2D;
-        cost_factor: 23;
-        running_cost_factor: 53;
+        cost_factor: 75;
+        running_cost_factor: 60;
 
         speed: 160 km/h;
         track_type: T_D2;
@@ -1580,7 +1559,7 @@ item(FEAT_TRAINS, ivolga3, 103) {
         purchase_weight: 57;
         cargo_age_period:local_cargo_age;
         power: sw_ivolga0_power_main()*4*1342/1000;
-        cargo_subtype_text:sw_empty_desc;
+        // cargo_subtype_text: sw_empty_desc;
         default: sw_ivolga3_lv;
         purchase: ivolga3_purchase;
         can_attach_wagon: sw_attach_vehid;
@@ -1608,12 +1587,487 @@ item(FEAT_TRAINS, ivolga3, 103) {
     }
     livery_override(mu_car){
       cargo_age_period:local_cargo_age;
-      cargo_subtype_text:sw_empty_desc;
+      // cargo_subtype_text: sw_empty_desc;
       loading_speed: param_loading_2D;
       cargo_capacity: sw_ivolga1_capacity_main;
       default:                      sw_ivolga3_lv;
       power: sw_ivolga0_power_main()*4*1342/1000;
       weight: 56;
+      length: sw_length_2_8_2;
+      articulated_part:sw_mucar_full_articulated_part;
+    }
+}
+# 1 "xUSSRplus.pnml" 10
+# 1 "src/ivolga/ivolga4.pnml" 1
+spriteset (ivolga4_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,      "gfx/ivolga/ivolga4_purchase.png") { tmpl_purchase(0, 0) }
+//blue doors
+spriteset (ivolga4_1_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 0) }
+spriteset (ivolga4_1_end, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 37) }
+spriteset (ivolga4_1_mot_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 74) }
+spriteset (ivolga4_1_mot_d_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 74) }
+spriteset (ivolga4_1_mot, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 111) }
+spriteset (ivolga4_1_mot_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 111) }
+spriteset (ivolga4_1_mot_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 148) }
+spriteset (ivolga4_1_mot_2_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 148) }
+spriteset (ivolga4_1_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 185) }
+spriteset (ivolga4_1_front_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std(0, 222) }
+spriteset (ivolga4_1_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1.png") { tmpl_std_rev(0, 222) }
+
+spriteset (ivolga4_1_mcd_mot_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std_rev(0, 0) }
+spriteset (ivolga4_1_mcd_mot_d_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std(0, 0) }
+spriteset (ivolga4_1_mcd_mot, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std(0, 37) }
+spriteset (ivolga4_1_mcd_mot_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std_rev(0, 37) }
+spriteset (ivolga4_1_mcd_mot_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std(0, 74) }
+spriteset (ivolga4_1_mcd_mot_2_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std_rev(0, 74) }
+spriteset (ivolga4_1_mcd_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_1_mcd.png") { tmpl_std(0, 111) }
+//grey doors
+spriteset (ivolga4_2_front, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 0) }
+spriteset (ivolga4_2_end, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 37) }
+spriteset (ivolga4_2_mot_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 74) }
+spriteset (ivolga4_2_mot_d_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 74) }
+spriteset (ivolga4_2_mot, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 111) }
+spriteset (ivolga4_2_mot_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 111) }
+spriteset (ivolga4_2_mot_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 148) }
+spriteset (ivolga4_2_mot_2_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 148) }
+spriteset (ivolga4_2_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 185) }
+spriteset (ivolga4_2_front_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std(0, 222) }
+spriteset (ivolga4_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2.png") { tmpl_std_rev(0, 222) }
+
+spriteset (ivolga4_2_mcd_mot_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std_rev(0, 0) }
+spriteset (ivolga4_2_mcd_mot_d_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std(0, 0) }
+spriteset (ivolga4_2_mcd_mot, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std(0, 37) }
+spriteset (ivolga4_2_mcd_mot_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std_rev(0, 37) }
+spriteset (ivolga4_2_mcd_mot_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std(0, 74) }
+spriteset (ivolga4_2_mcd_mot_2_rev, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std_rev(0, 74) }
+spriteset (ivolga4_2_mcd_wag, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/ivolga4_2_mcd.png") { tmpl_std(0, 111) }
+
+//*livery 1
+  //gfx logic
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_d_gfx_1,position_in_consist % 6){
+        1: ivolga4_1_mot_d;
+        4: ivolga4_1_mcd_mot_d;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_d_gfx_2,position_in_consist_from_end % 6){
+        1: ivolga4_1_mot_d_rev;
+        4: ivolga4_1_mcd_mot_d_rev;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_mot_d_gfx,vehicle_is_reversed){
+        1: sw_ivolga4_1_mot_d_gfx_2;
+        sw_ivolga4_1_mot_d_gfx_1;
+    }
+
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_d_rev_gfx_1,position_in_consist % 6){
+        1: ivolga4_1_mot_d_rev;
+        4: ivolga4_1_mcd_mot_d_rev;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_d_rev_gfx_2,position_in_consist_from_end % 6){
+        1: ivolga4_1_mot_d;
+        4: ivolga4_1_mcd_mot_d;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_mot_d_rev_gfx,vehicle_is_reversed){
+        1: sw_ivolga4_1_mot_d_rev_gfx_2;
+        sw_ivolga4_1_mot_d_rev_gfx_1;
+    }
+
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_gfx_1,position_in_consist % 6){
+        1: ivolga4_1_mot;
+        4: ivolga4_1_mcd_mot;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_gfx_2,position_in_consist_from_end % 6){
+        1: ivolga4_1_mot_rev;
+        4: ivolga4_1_mcd_mot_rev;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_mot_gfx,vehicle_is_reversed){
+        1: sw_ivolga4_1_mot_gfx_2;
+        sw_ivolga4_1_mot_gfx_1;
+    }
+
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_rev_gfx_1,position_in_consist % 6){
+        1: ivolga4_1_mot_rev;
+        4: ivolga4_1_mcd_mot_rev;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_rev_gfx_2,position_in_consist_from_end % 6){
+        1: ivolga4_1_mot;
+        4: ivolga4_1_mcd_mot;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_mot_rev_gfx,vehicle_is_reversed){
+        1: sw_ivolga4_1_mot_rev_gfx_2;
+        sw_ivolga4_1_mot_rev_gfx_1;
+    }
+
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_wag_gfx_1,position_in_consist % 6){
+        1: ivolga4_1_wag;
+        4: ivolga4_1_mcd_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_wag_gfx_2,position_in_consist_from_end % 6){
+        1: ivolga4_1_wag;
+        4: ivolga4_1_mcd_wag;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_wag_gfx,vehicle_is_reversed){
+      1: sw_ivolga4_1_wag_gfx_2;
+      sw_ivolga4_1_wag_gfx_1;
+    }
+  //gfx setter
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_end,position_in_articulated_veh % 3){
+        1: ivolga4_1_end;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_front,position_in_articulated_veh % 3){
+        1: ivolga4_1_front;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot,position_in_articulated_veh % 3){
+        1: sw_ivolga4_1_mot_gfx;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_d,position_in_articulated_veh % 3){
+        1: sw_ivolga4_1_mot_d_gfx;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_mot_rev,position_in_articulated_veh % 3){
+        1: sw_ivolga4_1_mot_rev_gfx;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_wag,position_in_articulated_veh % 3){
+        1: sw_ivolga4_1_wag_gfx;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_front_f,position_in_articulated_veh % 3){
+        1: ivolga4_1_front_f;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_end_f,position_in_articulated_veh % 3){
+        1: ivolga4_1_end_f;
+        dummy_sprites;
+    }
+  //panto placer 2 (5)
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_panto_placer_2,position_in_consist%9){
+      4: sw_ivolga4_1_mot;
+      7: sw_ivolga4_1_mot_rev;
+      sw_ivolga4_1_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_panto_placer_2_rev,position_in_consist_from_end%9){
+      4: sw_ivolga4_1_mot;
+      7: sw_ivolga4_1_mot_rev;
+      sw_ivolga4_1_wag;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_panto_placer_2_main, vehicle_is_reversed){
+      1: sw_ivolga4_1_panto_placer_2_rev;
+      sw_ivolga4_1_panto_placer_2;
+    }
+  //panto placer 3 (6-7)
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_panto_placer_3,position_in_consist%18){
+      4: sw_ivolga4_1_mot;
+      10: sw_ivolga4_1_mot;
+      13: sw_ivolga4_1_mot_rev;
+      sw_ivolga4_1_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_panto_placer_3_rev,position_in_consist_from_end%18){
+      4: sw_ivolga4_1_mot;
+      10: sw_ivolga4_1_mot;
+      13: sw_ivolga4_1_mot_rev;
+      sw_ivolga4_1_wag;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_panto_placer_3_main, vehicle_is_reversed){
+      1: sw_ivolga4_1_panto_placer_3_rev;
+      sw_ivolga4_1_panto_placer_3;
+    }
+  //panto placer 5 (11)
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_panto_placer_5,position_in_consist%30){
+      4: sw_ivolga4_1_mot;
+      10: sw_ivolga4_1_mot;
+      13: sw_ivolga4_1_mot_d;
+      19: sw_ivolga4_1_mot_rev;
+      25: sw_ivolga4_1_mot_rev;
+      sw_ivolga4_1_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_panto_placer_5_rev,position_in_consist_from_end%30){
+      4: sw_ivolga4_1_mot;
+      10: sw_ivolga4_1_mot;
+      13: sw_ivolga4_1_mot_d;
+      19: sw_ivolga4_1_mot_rev;
+      25: sw_ivolga4_1_mot_rev;
+      sw_ivolga4_1_wag;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_panto_placer_5_main, vehicle_is_reversed){
+      1: sw_ivolga4_1_panto_placer_5_rev;
+      sw_ivolga4_1_panto_placer_5;
+    }
+  //panto controller
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_panto_placer_main, num_vehs_in_consist){
+      0..15:sw_ivolga4_1_panto_placer_2_main;
+      16..19:sw_ivolga4_1_panto_placer_3_main;
+      sw_ivolga4_1_panto_placer_5_main;
+    }
+  //front end fixer
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_1_end_gfx,position_in_consist_from_end){
+      1: sw_ivolga4_1_end;
+      sw_ivolga4_1_panto_placer_main;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_livery_1,position_in_consist){
+      1: sw_ivolga4_1_front;
+      sw_ivolga4_1_end_gfx;
+    }
+//
+//*livery 2
+  //gfx logic
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot_d_gfx_1,position_in_consist % 6){
+        1: ivolga4_2_mot_d;
+        4: ivolga4_2_mcd_mot_d;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot_d_gfx_2,position_in_consist_from_end % 6){
+        1: ivolga4_2_mot_d_rev;
+        4: ivolga4_2_mcd_mot_d_rev;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_mot_d_gfx,vehicle_is_reversed){
+        1: sw_ivolga4_2_mot_d_gfx_2;
+        sw_ivolga4_2_mot_d_gfx_1;
+    }
+
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot_d_rev_gfx_1,position_in_consist % 6){
+        1: ivolga4_2_mot_d_rev;
+        4: ivolga4_2_mcd_mot_d_rev;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot_d_rev_gfx_2,position_in_consist_from_end % 6){
+        1: ivolga4_2_mot_d;
+        4: ivolga4_2_mcd_mot_d;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_mot_d_rev_gfx,vehicle_is_reversed){
+        1: sw_ivolga4_2_mot_d_rev_gfx_2;
+        sw_ivolga4_2_mot_d_rev_gfx_1;
+    }
+
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot_gfx_1,position_in_consist % 6){
+        1: ivolga4_2_mot;
+        4: ivolga4_2_mcd_mot;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot_gfx_2,position_in_consist_from_end % 6){
+        1: ivolga4_2_mot_rev;
+        4: ivolga4_2_mcd_mot_rev;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_mot_gfx,vehicle_is_reversed){
+        1: sw_ivolga4_2_mot_gfx_2;
+        sw_ivolga4_2_mot_gfx_1;
+    }
+
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot_rev_gfx_1,position_in_consist % 6){
+        1: ivolga4_2_mot_rev;
+        4: ivolga4_2_mcd_mot_rev;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot_rev_gfx_2,position_in_consist_from_end % 6){
+        1: ivolga4_2_mot;
+        4: ivolga4_2_mcd_mot;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_mot_rev_gfx,vehicle_is_reversed){
+        1: sw_ivolga4_2_mot_rev_gfx_2;
+        sw_ivolga4_2_mot_rev_gfx_1;
+    }
+
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_wag_gfx_1,position_in_consist % 6){
+        1: ivolga4_2_wag;
+        4: ivolga4_2_mcd_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_wag_gfx_2,position_in_consist_from_end % 6){
+        1: ivolga4_2_wag;
+        4: ivolga4_2_mcd_wag;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_wag_gfx,vehicle_is_reversed){
+      1: sw_ivolga4_2_wag_gfx_2;
+      sw_ivolga4_2_wag_gfx_1;
+    }
+  //gfx setter
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_end,position_in_articulated_veh % 3){
+        1: ivolga4_2_end;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_front,position_in_articulated_veh % 3){
+        1: ivolga4_2_front;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot,position_in_articulated_veh % 3){
+        1: sw_ivolga4_2_mot_gfx;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot_d,position_in_articulated_veh % 3){
+        1: sw_ivolga4_2_mot_d_gfx;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_mot_rev,position_in_articulated_veh % 3){
+        1: sw_ivolga4_2_mot_rev_gfx;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_wag,position_in_articulated_veh % 3){
+        1: sw_ivolga4_2_wag_gfx;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_front_f,position_in_articulated_veh % 3){
+        1: ivolga4_2_front_f;
+        dummy_sprites;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_end_f,position_in_articulated_veh % 3){
+        1: ivolga4_2_end_f;
+        dummy_sprites;
+    }
+  //panto placer 2 (5)
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_panto_placer_2,position_in_consist%9){
+      4: sw_ivolga4_2_mot;
+      7: sw_ivolga4_2_mot_rev;
+      sw_ivolga4_2_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_panto_placer_2_rev,position_in_consist_from_end%9){
+      4: sw_ivolga4_2_mot;
+      7: sw_ivolga4_2_mot_rev;
+      sw_ivolga4_2_wag;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_panto_placer_2_main, vehicle_is_reversed){
+      1: sw_ivolga4_2_panto_placer_2_rev;
+      sw_ivolga4_2_panto_placer_2;
+    }
+  //panto placer 3 (6-7)
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_panto_placer_3,position_in_consist%18){
+      4: sw_ivolga4_2_mot;
+      10: sw_ivolga4_2_mot;
+      13: sw_ivolga4_2_mot_rev;
+      sw_ivolga4_2_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_panto_placer_3_rev,position_in_consist_from_end%18){
+      4: sw_ivolga4_2_mot;
+      10: sw_ivolga4_2_mot;
+      13: sw_ivolga4_2_mot_rev;
+      sw_ivolga4_2_wag;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_panto_placer_3_main, vehicle_is_reversed){
+      1: sw_ivolga4_2_panto_placer_3_rev;
+      sw_ivolga4_2_panto_placer_3;
+    }
+  //panto placer 5 (11)
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_panto_placer_5,position_in_consist%30){
+      4: sw_ivolga4_2_mot;
+      10: sw_ivolga4_2_mot;
+      13: sw_ivolga4_2_mot_d;
+      19: sw_ivolga4_2_mot_rev;
+      25: sw_ivolga4_2_mot_rev;
+      sw_ivolga4_2_wag;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_panto_placer_5_rev,position_in_consist_from_end%30){
+      4: sw_ivolga4_2_mot;
+      10: sw_ivolga4_2_mot;
+      13: sw_ivolga4_2_mot_d;
+      19: sw_ivolga4_2_mot_rev;
+      25: sw_ivolga4_2_mot_rev;
+      sw_ivolga4_2_wag;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_panto_placer_5_main, vehicle_is_reversed){
+      1: sw_ivolga4_2_panto_placer_5_rev;
+      sw_ivolga4_2_panto_placer_5;
+    }
+  //panto controller
+    switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_panto_placer_main, num_vehs_in_consist){
+      0..15:sw_ivolga4_2_panto_placer_2_main;
+      16..19:sw_ivolga4_2_panto_placer_3_main;
+      sw_ivolga4_2_panto_placer_5_main;
+    }
+  //front end fixer
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_2_end_gfx,position_in_consist_from_end){
+      1: sw_ivolga4_2_end;
+      sw_ivolga4_2_panto_placer_main;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga4_livery_2,position_in_consist){
+      1: sw_ivolga4_2_front;
+      sw_ivolga4_2_end_gfx;
+    }
+//
+//liveries
+random_switch(FEAT_TRAINS, PARENT, sw_ivolga4_livery_0){
+  2:sw_ivolga4_livery_1;
+  1:sw_ivolga4_livery_2;
+}
+  switch(FEAT_TRAINS, PARENT, sw_ivolga4_lv,cargo_subtype){
+    0:sw_ivolga4_livery_0;
+    1:sw_ivolga4_livery_1;
+    2:sw_ivolga4_livery_2;
+  }
+  switch(FEAT_TRAINS, SELF, sw_ivolga4_lv_desc,cargo_subtype){
+    0:string(LV_RANDOM);
+    1:string(LV_BLUE_DOOR);
+    2:string(LV_GREY_DOOR);
+  }
+//
+item(FEAT_TRAINS, ivolga4, 104) {
+    property {
+        name: string(STR_ivolga4_NAME);
+        introduction_date: date(2023, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 40;
+        reliability_decay: 23;
+
+        cargo_capacity: 1;
+        loading_speed: param_loading_2D;
+        cost_factor: 75;
+        running_cost_factor: 60;
+
+        speed: 160 km/h;
+        track_type: T_D2;
+        power: 620 kW;
+        weight: 52 ton;
+        variant_group: ivolga0;
+
+        climates_available: ALL_CLIMATES;
+        ai_special_flag: AI_FLAG_PASSENGER;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_MU);
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        refit_cost: 0;
+        dual_headed: 0;
+        ai_engine_rank: 0;
+
+        running_cost_base: RUNNING_COST_ELECTRIC;
+        engine_class: ENGINE_CLASS_ELECTRIC;
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        
+        tractive_effort_coefficient: 0.3;
+        air_drag_coefficient: 0.07;
+        bitmask_vehicle_info: 0;
+    }
+	graphics {
+        purchase_weight: 57;
+        cargo_age_period:local_cargo_age;
+        power: sw_ivolga0_power_main()*4*1342/1000;
+        cargo_subtype_text: sw_ivolga4_lv_desc;
+        default: sw_ivolga4_lv;
+        purchase: ivolga4_purchase;
+        can_attach_wagon: sw_attach_vehid;
+        additional_text:    string(STR_CONCAT_6,
+                            string(STR_BROADGAUGE),
+                            string(STR_ELECTRIC,
+                            string(STR_DC),
+                            ),
+                            string(STR_LOAD_SPEED,
+                            string(STR_23_DOOR),),
+                            string(STR_FORMATION),
+                            string(STR_ivolga34_DESC),
+                            string(STR_CARS),
+                            string(STR_USAGE,
+                            string(STR_COMMUTER),
+                            ),
+                            
+
+                        );
+        start_stop: sw_stop_start_3; 
+        cargo_capacity: sw_ivolga1_capacity_main;
+        purchase_cargo_capacity: 124;
+        length: sw_length_2_8_2;
+        articulated_part:sw_mucar_full_articulated_part;
+    }
+    livery_override(mu_car){
+      cargo_age_period:local_cargo_age;
+      cargo_subtype_text: sw_ivolga4_lv_desc;
+      loading_speed: param_loading_3D;
+      cargo_capacity: sw_ivolga1_capacity_main;
+      default:                      sw_ivolga4_lv;
+      power: sw_ivolga0_power_main()*4*1342/1000;
+      weight: 53;
       length: sw_length_2_8_2;
       articulated_part:sw_mucar_full_articulated_part;
     }

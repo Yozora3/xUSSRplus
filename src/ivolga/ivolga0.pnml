@@ -349,7 +349,7 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
     0..2015:sw_ivolga0_livery_1;
     sw_ivolga0_livery_2;
   }
-  switch(FEAT_TRAINS, SELF, sw_ivolga0_lv,cargo_subtype){
+  switch(FEAT_TRAINS, PARENT, sw_ivolga0_lv,cargo_subtype){
     0:sw_ivolga0_livery_0;
     1:sw_ivolga0_livery_1;
     2:sw_ivolga0_livery_2;
@@ -393,8 +393,8 @@ item(FEAT_TRAINS, ivolga0, 100) {
 
         cargo_capacity: 1;
         loading_speed: param_loading_2D;
-        cost_factor: 23;
-        running_cost_factor: 53;
+        cost_factor: 75;
+        running_cost_factor: 60;
 
         speed: 120 km/h;
         track_type: T_D2;

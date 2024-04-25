@@ -22,6 +22,8 @@ STR_1_DOOR:1 Door
 STR_2_DOOR:2 Doors
 STR_3_DOOR:3 Doors
 
+STR_23_DOOR:2/3 Doors
+
 # Formations
 STR_FORMATION:{BLACK}Real Formations: {GOLD}
 STR_CARS: cars{}
@@ -31,7 +33,7 @@ STR_ELECTRIC:{BLACK}Electric System: {STRING}{}
 
 STR_DC:{RED}DC 3KV
 # Usage
-STR_USAGE:{BLACK}Usage: {STRING}{}
+STR_USAGE:{BLACK}Usage: {STRING}
 
 STR_COMMUTER:{SILVER}Commuter
 
@@ -47,6 +49,8 @@ LV_RANDOM: Auto-Timed/Randomized Livery
 LV_DEFAULT: Default Livery
 LV_ORIGINAL: Original Livery
 LV_MCD: With "MCD" Letters {TINYFONT}(2019)
+LV_BLUE_DOOR: Blue Doors Livery
+LV_GREY_DOOR: Grey Doors Livery
 
 # mu_cars
 STR_MUCAR:EG2Tv "Ivolga" Car

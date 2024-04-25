@@ -7,9 +7,9 @@ spriteset (dummy_sprites, "gfx/misc/empty.png")
 {
   [0, 0, 2, 2, 0, 0, CROP]
 }
-switch(FEAT_TRAINS, SELF, sw_empty_desc,cargo_subtype){
-  0:string(LV_DEFAULT);
-}
+// switch(FEAT_TRAINS, SELF, sw_empty_desc,cargo_subtype){
+//   0:string(LV_DEFAULT);
+// }
 switch (FEAT_TRAINS, SELF, sw_length_2_8_2, position_in_articulated_veh % 3) {
   0: return 2;
   1: return 8;
