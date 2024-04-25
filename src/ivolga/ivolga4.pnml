@@ -181,11 +181,11 @@ spriteset (ivolga4_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,      "gfx/ivolg
       sw_ivolga4_1_wag;
     }
     switch(FEAT_TRAINS, SELF, sw_ivolga4_1_panto_placer_6_rev,position_in_consist_from_end%21){
-      1: sw_ivolga4_1_front_f;
+      1: sw_ivolga4_1_end_f;
       4: sw_ivolga4_1_mot;
       10: sw_ivolga4_1_mot;
       13: sw_ivolga4_1_mot_rev;
-      19: sw_ivolga4_1_end_f;
+      19: sw_ivolga4_1_front_f;
       sw_ivolga4_1_wag;
     }
     switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_panto_placer_6_main, vehicle_is_reversed){
@@ -386,12 +386,11 @@ spriteset (ivolga4_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,      "gfx/ivolg
       sw_ivolga4_2_end_gfx;
     }
 //
-
 //liveries
-random_switch(FEAT_TRAINS, PARENT, sw_ivolga4_livery_0){
-  2:sw_ivolga4_livery_1;
-  1:sw_ivolga4_livery_2;
-}
+  random_switch(FEAT_TRAINS, PARENT, sw_ivolga4_livery_0){
+    2:sw_ivolga4_livery_1;
+    1:sw_ivolga4_livery_2;
+  }
   switch(FEAT_TRAINS, PARENT, sw_ivolga4_lv,cargo_subtype){
     0:sw_ivolga4_livery_0;
     1:sw_ivolga4_livery_1;
@@ -434,7 +433,7 @@ item(FEAT_TRAINS, ivolga4, 104) {
         speed: 160 km/h;
         track_type: T_D2;
         power: 620 kW;
-        weight: 52 ton;
+        weight: 54 ton;
         variant_group: ivolga0;
 
         climates_available: ALL_CLIMATES;
@@ -456,7 +455,7 @@ item(FEAT_TRAINS, ivolga4, 104) {
         bitmask_vehicle_info: 0;
     }
 	graphics {
-        purchase_weight: 57;
+        purchase_weight: 58;
         cargo_age_period:local_cargo_age;
         power: sw_ivolga0_power_main()*4*1342/1000;
         cargo_subtype_text: sw_ivolga4_lv_desc;
@@ -481,7 +480,7 @@ item(FEAT_TRAINS, ivolga4, 104) {
                         );
         start_stop: sw_stop_start_3; 
         cargo_capacity: sw_ivolga4_capacity_main;
-        purchase_cargo_capacity: 124;
+        purchase_cargo_capacity: 133;
         length: sw_length_2_8_2;
         articulated_part:sw_mucar_full_articulated_part;
     }
@@ -492,7 +491,7 @@ item(FEAT_TRAINS, ivolga4, 104) {
       cargo_capacity: sw_ivolga4_capacity_main;
       default:                      sw_ivolga4_lv;
       power: sw_ivolga0_power_main()*4*1342/1000;
-      weight: 53;
+      weight: 56;
       length: sw_length_2_8_2;
       articulated_part:sw_mucar_full_articulated_part;
     }
