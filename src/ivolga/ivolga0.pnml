@@ -393,8 +393,8 @@ item(FEAT_TRAINS, ivolga0, 100) {
 
         cargo_capacity: 1;
         loading_speed: param_loading_2D;
-        cost_factor: 75;
-        running_cost_factor: 60;
+        cost_factor: 76;
+        running_cost_factor: 58;
 
         speed: 120 km/h;
         track_type: T_D2;

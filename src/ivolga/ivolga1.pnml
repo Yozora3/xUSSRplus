@@ -83,23 +83,6 @@ spriteset (ivolga1_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
         1: ivolga1_1_end_f;
         dummy_sprites;
     }
-  //panto placer 1 (5)
-    switch(FEAT_TRAINS, SELF, sw_ivolga1_1_panto_placer_1,position_in_consist%12){
-      4: sw_ivolga1_1_mot;
-      7: sw_ivolga1_1_mot_d;
-      10: sw_ivolga1_1_mot_2;
-      sw_ivolga1_1_wag;
-    }
-    switch(FEAT_TRAINS, SELF, sw_ivolga1_1_panto_placer_1_rev,position_in_consist_from_end%12){
-      4: sw_ivolga1_1_mot_rev;
-      7: sw_ivolga1_1_mot_d_rev;
-      10: sw_ivolga1_1_mot_2_rev;
-      sw_ivolga1_1_wag_rev;
-    }
-    switch(FEAT_TRAINS, PARENT, sw_ivolga1_1_panto_placer_1_main, vehicle_is_reversed){
-      1: sw_ivolga1_1_panto_placer_1_rev;
-      sw_ivolga1_1_panto_placer_1;
-    }
   //panto placer 2 (5)
     switch(FEAT_TRAINS, SELF, sw_ivolga1_1_panto_placer_2,position_in_consist%9){
       4: sw_ivolga1_1_mot;
@@ -115,17 +98,17 @@ spriteset (ivolga1_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       1: sw_ivolga1_1_panto_placer_2_rev;
       sw_ivolga1_1_panto_placer_2;
     }
-  //panto placer 3 (6-7)
+  //panto placer 3 (6-8)
     switch(FEAT_TRAINS, SELF, sw_ivolga1_1_panto_placer_3,position_in_consist%18){
       4: sw_ivolga1_1_mot;
-      10: sw_ivolga1_1_mot;
-      13: sw_ivolga1_1_mot_2;
+      10: sw_ivolga1_1_mot_d;
+      13: sw_ivolga1_1_mot_rev;
       sw_ivolga1_1_wag;
     }
     switch(FEAT_TRAINS, SELF, sw_ivolga1_1_panto_placer_3_rev,position_in_consist_from_end%18){
       4: sw_ivolga1_1_mot_rev;
-      10: sw_ivolga1_1_mot_rev;
-      13: sw_ivolga1_1_mot_2_rev;
+      10: sw_ivolga1_1_mot_d_rev;
+      13: sw_ivolga1_1_mot;
       sw_ivolga1_1_wag_rev;
     }
     switch(FEAT_TRAINS, PARENT, sw_ivolga1_1_panto_placer_3_main, vehicle_is_reversed){
@@ -133,24 +116,26 @@ spriteset (ivolga1_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       sw_ivolga1_1_panto_placer_3;
     }
   //panto placer 4 (6+5)
-    switch(FEAT_TRAINS, SELF, sw_ivolga1_1_panto_placer_4,position_in_consist%27){
+    switch(FEAT_TRAINS, SELF, sw_ivolga1_1_panto_placer_4,position_in_consist){
       4: sw_ivolga1_1_mot;
-      10: sw_ivolga1_1_mot;
-      13: sw_ivolga1_1_mot_2;
+      10: sw_ivolga1_1_mot_d;
+      13: sw_ivolga1_1_mot_rev;
       16: sw_ivolga1_1_end_f;
       19: sw_ivolga1_1_front_f;
-      22: sw_ivolga1_1_mot;
-      25: sw_ivolga1_1_mot_2;
+      25: sw_ivolga1_1_mot_d;
+      28: sw_ivolga1_1_mot_rev;
+      34: sw_ivolga1_1_mot_rev;
       sw_ivolga1_1_wag;
     }
-    switch(FEAT_TRAINS, SELF, sw_ivolga1_1_panto_placer_4_rev,position_in_consist_from_end%27){
+    switch(FEAT_TRAINS, SELF, sw_ivolga1_1_panto_placer_4_rev,position_in_consist_from_end){
       4: sw_ivolga1_1_mot_rev;
-      10: sw_ivolga1_1_mot_rev;
-      13: sw_ivolga1_1_mot_2_rev;
+      10: sw_ivolga1_1_mot_d_rev;
+      13: sw_ivolga1_1_mot;
       16: sw_ivolga1_1_front_f;
       19: sw_ivolga1_1_end_f;
-      22: sw_ivolga1_1_mot_rev;
-      25: sw_ivolga1_1_mot_2_rev;
+      25: sw_ivolga1_1_mot_d_rev;
+      28: sw_ivolga1_1_mot;
+      34: sw_ivolga1_1_mot;
       sw_ivolga1_1_wag_rev;
     }
     switch(FEAT_TRAINS, PARENT, sw_ivolga1_1_panto_placer_4_main, vehicle_is_reversed){
@@ -178,24 +163,58 @@ spriteset (ivolga1_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       1: sw_ivolga1_1_panto_placer_5_rev;
       sw_ivolga1_1_panto_placer_5;
     }
-  //panto controller
-    random_switch(FEAT_TRAINS, PARENT, sw_ivolga1_1_panto_placer_1_main_r){
-      1:sw_ivolga1_1_panto_placer_1_main;
-      1:sw_ivolga1_1_panto_placer_2_main;
+  //panto placer 6 (14+)
+    switch(FEAT_TRAINS, SELF, sw_ivolga1_1_panto_placer_6,position_in_consist%21){
+      4: sw_ivolga1_1_mot;
+      10: sw_ivolga1_1_mot;
+      13: sw_ivolga1_1_mot_rev;
+      sw_ivolga1_1_wag;
     }
-    switch(FEAT_TRAINS, PARENT, sw_ivolga1_1_panto_placer_45_main, build_year<2019&&num_vehs_in_consist>30){
+    switch(FEAT_TRAINS, SELF, sw_ivolga1_1_panto_placer_6_rev,position_in_consist_from_end%21){
+      4: sw_ivolga1_1_mot_rev;
+      10: sw_ivolga1_1_mot_rev;
+      13: sw_ivolga1_1_mot;
+      19: sw_ivolga1_1_front_f
+      sw_ivolga1_1_wag;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga1_1_panto_placer_6_main, vehicle_is_reversed){
+      1: sw_ivolga1_1_panto_placer_6_rev;
+      sw_ivolga1_1_panto_placer_6;
+    }
+    //panto controller
+    switch(FEAT_TRAINS, PARENT, sw_ivolga1_1_panto_placer_45_main, build_year<2020&&num_vehs_in_consist>30){
       1:sw_ivolga1_1_panto_placer_4_main;
       sw_ivolga1_1_panto_placer_5_main;
     }
     switch(FEAT_TRAINS, PARENT, sw_ivolga1_1_panto_placer_main, num_vehs_in_consist){
-      0..15:sw_ivolga1_1_panto_placer_1_main_r;
-      16..19:sw_ivolga1_1_panto_placer_3_main;
-      sw_ivolga1_1_panto_placer_45_main;
+      0..15:sw_ivolga1_1_panto_placer_2_main;
+      16..22:sw_ivolga1_1_panto_placer_3_main;
+      23..39:sw_ivolga1_1_panto_placer_45_main;
+      sw_ivolga1_1_panto_placer_6_main;
+    }
+  //fake placer
+    switch(FEAT_TRAINS, SELF, sw_ivolga1_1_fake_head_placer_1,position_in_consist){
+      19: sw_ivolga1_1_end_f;
+      22: sw_ivolga1_1_front_f;
+      sw_ivolga1_1_panto_placer_main;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga1_1_fake_head_placer_1_rev,position_in_consist_from_end){
+      19: sw_ivolga1_1_front_f;
+      22: sw_ivolga1_1_end_f;
+      sw_ivolga1_1_panto_placer_main;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga1_1_fake_head_placer_1_gfx, vehicle_is_reversed){
+      1: sw_ivolga1_1_fake_head_placer_1_rev;
+      sw_ivolga1_1_fake_head_placer_1;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga1_1_fake_head_placer_main, num_vehs_in_consist>39){
+      1: sw_ivolga1_1_fake_head_placer_1_gfx;
+      sw_ivolga1_1_panto_placer_main;
     }
   //front end fixer
     switch(FEAT_TRAINS, SELF, sw_ivolga1_1_end_gfx,position_in_consist_from_end){
       1: sw_ivolga1_1_end;
-      sw_ivolga1_1_panto_placer_main;
+      sw_ivolga1_1_fake_head_placer_main;
     }
     switch(FEAT_TRAINS, SELF, sw_ivolga1_livery_1,position_in_consist){
       1: sw_ivolga1_1_front;
@@ -252,23 +271,6 @@ spriteset (ivolga1_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
         1: ivolga1_2_end_f;
         dummy_sprites;
     }
-  //panto placer 1 (5)
-    switch(FEAT_TRAINS, SELF, sw_ivolga1_2_panto_placer_1,position_in_consist%12){
-      4: sw_ivolga1_2_mot;
-      7: sw_ivolga1_2_mot_d;
-      10: sw_ivolga1_2_mot_2;
-      sw_ivolga1_2_wag;
-    }
-    switch(FEAT_TRAINS, SELF, sw_ivolga1_2_panto_placer_1_rev,position_in_consist_from_end%12){
-      4: sw_ivolga1_2_mot_rev;
-      7: sw_ivolga1_2_mot_d_rev;
-      10: sw_ivolga1_2_mot_2_rev;
-      sw_ivolga1_2_wag_rev;
-    }
-    switch(FEAT_TRAINS, PARENT, sw_ivolga1_2_panto_placer_1_main, vehicle_is_reversed){
-      1: sw_ivolga1_2_panto_placer_1_rev;
-      sw_ivolga1_2_panto_placer_1;
-    }
   //panto placer 2 (5)
     switch(FEAT_TRAINS, SELF, sw_ivolga1_2_panto_placer_2,position_in_consist%9){
       4: sw_ivolga1_2_mot;
@@ -284,17 +286,17 @@ spriteset (ivolga1_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       1: sw_ivolga1_2_panto_placer_2_rev;
       sw_ivolga1_2_panto_placer_2;
     }
-  //panto placer 3 (6-7)
+  //panto placer 3 (6-8)
     switch(FEAT_TRAINS, SELF, sw_ivolga1_2_panto_placer_3,position_in_consist%18){
       4: sw_ivolga1_2_mot;
-      10: sw_ivolga1_2_mot;
-      13: sw_ivolga1_2_mot_2;
+      10: sw_ivolga1_2_mot_d;
+      13: sw_ivolga1_2_mot_rev;
       sw_ivolga1_2_wag;
     }
     switch(FEAT_TRAINS, SELF, sw_ivolga1_2_panto_placer_3_rev,position_in_consist_from_end%18){
       4: sw_ivolga1_2_mot_rev;
-      10: sw_ivolga1_2_mot_rev;
-      13: sw_ivolga1_2_mot_2_rev;
+      10: sw_ivolga1_2_mot_d_rev;
+      13: sw_ivolga1_2_mot;
       sw_ivolga1_2_wag_rev;
     }
     switch(FEAT_TRAINS, PARENT, sw_ivolga1_2_panto_placer_3_main, vehicle_is_reversed){
@@ -302,24 +304,26 @@ spriteset (ivolga1_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       sw_ivolga1_2_panto_placer_3;
     }
   //panto placer 4 (6+5)
-    switch(FEAT_TRAINS, SELF, sw_ivolga1_2_panto_placer_4,position_in_consist%27){
+    switch(FEAT_TRAINS, SELF, sw_ivolga1_2_panto_placer_4,position_in_consist){
       4: sw_ivolga1_2_mot;
-      10: sw_ivolga1_2_mot;
-      13: sw_ivolga1_2_mot_2;
+      10: sw_ivolga1_2_mot_d;
+      13: sw_ivolga1_2_mot_rev;
       16: sw_ivolga1_2_end_f;
       19: sw_ivolga1_2_front_f;
-      22: sw_ivolga1_2_mot;
-      25: sw_ivolga1_2_mot_2;
+      25: sw_ivolga1_2_mot_d;
+      28: sw_ivolga1_2_mot_rev;
+      34: sw_ivolga1_2_mot_rev;
       sw_ivolga1_2_wag;
     }
-    switch(FEAT_TRAINS, SELF, sw_ivolga1_2_panto_placer_4_rev,position_in_consist_from_end%27){
+    switch(FEAT_TRAINS, SELF, sw_ivolga1_2_panto_placer_4_rev,position_in_consist_from_end){
       4: sw_ivolga1_2_mot_rev;
-      10: sw_ivolga1_2_mot_rev;
-      13: sw_ivolga1_2_mot_2_rev;
+      10: sw_ivolga1_2_mot_d_rev;
+      13: sw_ivolga1_2_mot;
       16: sw_ivolga1_2_front_f;
       19: sw_ivolga1_2_end_f;
-      22: sw_ivolga1_2_mot_rev;
-      25: sw_ivolga1_2_mot_2_rev;
+      25: sw_ivolga1_2_mot_d_rev;
+      28: sw_ivolga1_2_mot;
+      34: sw_ivolga1_2_mot;
       sw_ivolga1_2_wag_rev;
     }
     switch(FEAT_TRAINS, PARENT, sw_ivolga1_2_panto_placer_4_main, vehicle_is_reversed){
@@ -347,30 +351,64 @@ spriteset (ivolga1_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       1: sw_ivolga1_2_panto_placer_5_rev;
       sw_ivolga1_2_panto_placer_5;
     }
-  //panto controller
-    random_switch(FEAT_TRAINS, PARENT, sw_ivolga1_2_panto_placer_1_main_r){
-      1:sw_ivolga1_2_panto_placer_1_main;
-      1:sw_ivolga1_2_panto_placer_2_main;
+  //panto placer 6 (14+)
+    switch(FEAT_TRAINS, SELF, sw_ivolga1_2_panto_placer_6,position_in_consist%21){
+      4: sw_ivolga1_2_mot;
+      10: sw_ivolga1_2_mot;
+      13: sw_ivolga1_2_mot_rev;
+      sw_ivolga1_2_wag;
     }
-    switch(FEAT_TRAINS, PARENT, sw_ivolga1_2_panto_placer_45_main, build_year<2019&&num_vehs_in_consist>30){
+    switch(FEAT_TRAINS, SELF, sw_ivolga1_2_panto_placer_6_rev,position_in_consist_from_end%21){
+      4: sw_ivolga1_2_mot_rev;
+      10: sw_ivolga1_2_mot_rev;
+      13: sw_ivolga1_2_mot;
+      sw_ivolga1_2_wag;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga1_2_panto_placer_6_main, vehicle_is_reversed){
+      1: sw_ivolga1_2_panto_placer_6_rev;
+      sw_ivolga1_2_panto_placer_6;
+    }
+    //panto controller
+    switch(FEAT_TRAINS, PARENT, sw_ivolga1_2_panto_placer_45_main, build_year<2020&&num_vehs_in_consist>30){
       1:sw_ivolga1_2_panto_placer_4_main;
       sw_ivolga1_2_panto_placer_5_main;
     }
     switch(FEAT_TRAINS, PARENT, sw_ivolga1_2_panto_placer_main, num_vehs_in_consist){
-      0..15:sw_ivolga1_2_panto_placer_1_main_r;
-      16..19:sw_ivolga1_2_panto_placer_3_main;
-      sw_ivolga1_2_panto_placer_45_main;
+      0..15:sw_ivolga1_2_panto_placer_2_main;
+      16..22:sw_ivolga1_2_panto_placer_3_main;
+      23..39:sw_ivolga1_2_panto_placer_45_main;
+      sw_ivolga1_2_panto_placer_6_main;
+    }
+  //fake placer
+    switch(FEAT_TRAINS, SELF, sw_ivolga1_2_fake_head_placer_1,position_in_consist){
+      19: sw_ivolga1_2_end_f;
+      22: sw_ivolga1_2_front_f;
+      sw_ivolga1_2_panto_placer_main;
+    }
+    switch(FEAT_TRAINS, SELF, sw_ivolga1_2_fake_head_placer_1_rev,position_in_consist_from_end){
+      19: sw_ivolga1_2_front_f;
+      22: sw_ivolga1_2_end_f;
+      sw_ivolga1_2_panto_placer_main;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga1_2_fake_head_placer_1_gfx, vehicle_is_reversed){
+      1: sw_ivolga1_2_fake_head_placer_1_rev;
+      sw_ivolga1_2_fake_head_placer_1;
+    }
+    switch(FEAT_TRAINS, PARENT, sw_ivolga1_2_fake_head_placer_main, num_vehs_in_consist>39){
+      1: sw_ivolga1_2_fake_head_placer_1_gfx;
+      sw_ivolga1_2_panto_placer_main;
     }
   //front end fixer
     switch(FEAT_TRAINS, SELF, sw_ivolga1_2_end_gfx,position_in_consist_from_end){
       1: sw_ivolga1_2_end;
-      sw_ivolga1_2_panto_placer_main;
+      sw_ivolga1_2_fake_head_placer_main;
     }
     switch(FEAT_TRAINS, SELF, sw_ivolga1_livery_2,position_in_consist){
       1: sw_ivolga1_2_front;
       sw_ivolga1_2_end_gfx;
     }
 //
+
 //*livery select
 //liveries
   switch(FEAT_TRAINS, PARENT, sw_ivolga1_livery_0,current_year){
@@ -412,8 +450,8 @@ item(FEAT_TRAINS, ivolga1, 101) {
 
         cargo_capacity: 1;
         loading_speed: param_loading_2D;
-        cost_factor: 75;
-        running_cost_factor: 60;
+        cost_factor: 72;
+        running_cost_factor: 57;
 
         speed: 120 km/h;
         track_type: T_D2;
