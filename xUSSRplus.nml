@@ -4,7 +4,7 @@ grf {
     name: string(STR_NAME);
     desc: string(STR_DESC);
 		url:  string(STR_GRF_URL);
-    version: 1; //0.1
+    version: 11; //0.1
     min_compatible_version: 0;
 //params
   //*basecosts
@@ -579,7 +579,7 @@ spriteset (ivolga0_2_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       sw_ivolga0_2_panto_placer_6;
     }
   //panto controller
-    switch(FEAT_TRAINS, PARENT, sw_ivolga0_2_panto_placer_45_main, build_year<2020&&num_vehs_in_consist>30){
+    switch(FEAT_TRAINS, PARENT, sw_ivolga0_2_panto_placer_45_main, current_year<2020&&num_vehs_in_consist>30){
       1:sw_ivolga0_2_panto_placer_4_main;
       sw_ivolga0_2_panto_placer_5_main;
     }
@@ -913,7 +913,6 @@ spriteset (ivolga1_3_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
     switch(FEAT_TRAINS, SELF, sw_ivolga1_1_panto_placer_6_rev,position_in_consist_from_end%21){
       4: sw_ivolga1_1_mot_rev;
       10: sw_ivolga1_1_mot_rev;
-      10: sw_ivolga1_1_mot_rev;
       13: sw_ivolga1_1_mot;
       19: sw_ivolga1_1_mot_rev;
       sw_ivolga1_1_wag;
@@ -923,7 +922,7 @@ spriteset (ivolga1_3_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       sw_ivolga1_1_panto_placer_6;
     }
     //panto controller
-    switch(FEAT_TRAINS, PARENT, sw_ivolga1_1_panto_placer_45_main, build_year<2020&&num_vehs_in_consist>30){
+    switch(FEAT_TRAINS, PARENT, sw_ivolga1_1_panto_placer_45_main, current_year<2020&&num_vehs_in_consist>30){
       1:sw_ivolga1_1_panto_placer_4_main;
       sw_ivolga1_1_panto_placer_5_main;
     }
@@ -1104,7 +1103,7 @@ spriteset (ivolga1_3_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       sw_ivolga1_2_panto_placer_6;
     }
     //panto controller
-    switch(FEAT_TRAINS, PARENT, sw_ivolga1_2_panto_placer_45_main, build_year<2020&&num_vehs_in_consist>30){
+    switch(FEAT_TRAINS, PARENT, sw_ivolga1_2_panto_placer_45_main, current_year<2020&&num_vehs_in_consist>30){
       1:sw_ivolga1_2_panto_placer_4_main;
       sw_ivolga1_2_panto_placer_5_main;
     }
@@ -1285,7 +1284,7 @@ spriteset (ivolga1_3_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       sw_ivolga1_3_panto_placer_6;
     }
   //panto controller
-    switch(FEAT_TRAINS, PARENT, sw_ivolga1_3_panto_placer_45_main, build_year<2020&&num_vehs_in_consist>30){
+    switch(FEAT_TRAINS, PARENT, sw_ivolga1_3_panto_placer_45_main, current_year<2020&&num_vehs_in_consist>30){
       1:sw_ivolga1_3_panto_placer_4_main;
       sw_ivolga1_3_panto_placer_5_main;
     }
@@ -1595,7 +1594,7 @@ spriteset (ivolga2_1_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       sw_ivolga2_1_panto_placer_6;
     }
   //panto controller
-    switch(FEAT_TRAINS, PARENT, sw_ivolga2_1_panto_placer_45_main, build_year<2020&&num_vehs_in_consist>30){
+    switch(FEAT_TRAINS, PARENT, sw_ivolga2_1_panto_placer_45_main, current_year<2020&&num_vehs_in_consist>30){
       1:sw_ivolga2_1_panto_placer_4_main;
       sw_ivolga2_1_panto_placer_5_main;
     }
