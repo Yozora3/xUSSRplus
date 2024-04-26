@@ -9,11 +9,11 @@ STR_PARAM_DESC_BASECOSTMODBUY:Определяет стоимость покуп
 STR_PARAM_RUN_NAME:Стоимость обслуживания
 STR_PARAM_RUN_DESC:Определяет стоимость обслуживания состава
 
-STR_PARAM_VLOW:Очень низко
-STR_PARAM_LOW:Низко
-STR_PARAM_NORMAL:Стандарт
-STR_PARAM_HIGH:Высоко
-STR_PARAM_VHIGH:Очень высоко
+STR_PARAM_VLOW:Очень низкая
+STR_PARAM_LOW:Низкая
+STR_PARAM_NORMAL:Стандартная
+STR_PARAM_HIGH:Высокая
+STR_PARAM_VHIGH:Очень высокая
 
 # *Errors
 STR_ATTACH_ERROR:Прицеплять можно только MU-вагон
