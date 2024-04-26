@@ -438,7 +438,7 @@ item(FEAT_TRAINS, ivolga0, 100) {
         speed: 120 km/h;
         track_type: T_D2;
         power: 620 kW;
-        weight: 57 ton;
+        weight: 52 ton;
 
         climates_available: ALL_CLIMATES;
         ai_special_flag: AI_FLAG_PASSENGER;
@@ -484,6 +484,7 @@ item(FEAT_TRAINS, ivolga0, 100) {
         start_stop: sw_stop_start_3; 
         cargo_capacity: sw_ivolga0_capacity_main;
         purchase_cargo_capacity: 128;
+        purchase_weight: 55;
         length: sw_length_2_8_2;
         articulated_part:sw_mucar_full_articulated_part;
     }
@@ -494,7 +495,7 @@ item(FEAT_TRAINS, ivolga0, 100) {
       cargo_capacity: sw_ivolga0_capacity_main;
       default:                      sw_ivolga0_lv;
       power: sw_ivolga0_power_main()*4*1342/1000;
-      weight: 55;
+      weight: 54;
       length: sw_length_2_8_2;
       articulated_part:sw_mucar_full_articulated_part;
     }
