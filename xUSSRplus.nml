@@ -6,6 +6,45 @@ grf {
 		url:  string(STR_GRF_URL);
     version: 1; //0.1
     min_compatible_version: 0;
+//params
+  //*basecosts
+    param 0 { 
+      param_buy {
+          type: int;
+          name: string(STR_PARAM_NAME_BASECOSTMODBUY);
+          desc: string(STR_PARAM_DESC_BASECOSTMODBUY);
+          min_value: 0;
+          max_value: 4;
+          def_value: 2;
+          names: {
+                    0: string(STR_PARAM_VLOW);
+                    1: string(STR_PARAM_LOW);
+                    2: string(STR_PARAM_NORMAL);
+                    3: string(STR_PARAM_HIGH);
+                    4: string(STR_PARAM_VHIGH);
+              };
+          }
+      }
+
+  //*runningcosts
+    param 1 {
+      param_run {
+        type: int;
+        name: string(STR_PARAM_RUN_NAME);
+        desc: string(STR_PARAM_RUN_DESC);
+        min_value: 0;
+        max_value: 4;
+        def_value: 2;
+        names: {
+                  0: string(STR_PARAM_VLOW);
+                  1: string(STR_PARAM_LOW);
+                  2: string(STR_PARAM_NORMAL);
+                  3: string(STR_PARAM_HIGH);
+                  4: string(STR_PARAM_VHIGH);
+                  //5: string(STR_PARAM_XUSSR) Ultra costs just like in XUSSR
+        };
+      }
+    }
 }
 
 # 1 "src/controllers/params.pnml" 1
@@ -18,14 +57,19 @@ param_loading_1D = 30; // 1 door //
 param_loading_2D = 60; // 2 doors //
 param_loading_3D = 80; // 3 doors //
 
+if (param_buy == 0) { PURCHASE_COST_MOD = -2; }
+if (param_buy == 1) { PURCHASE_COST_MOD = 1; }
+if (param_buy == 2) { PURCHASE_COST_MOD = 0; }
+if (param_buy == 3) { PURCHASE_COST_MOD = 1; }
+if (param_buy == 4) { PURCHASE_COST_MOD = 2; }
+
 basecost {
-		// PR_BUILD_VEHICLE_TRAIN : 	param_buy -2;
-		// PR_BUILD_VEHICLE_WAGON: 	param_buy +3;
-		PR_BUILD_VEHICLE_WAGON: 	7;
+		PR_BUILD_VEHICLE_TRAIN : 	param_buy -2;
+		PR_BUILD_VEHICLE_WAGON: 	param_buy +5;
 		// PR_RUNNING_TRAIN_DIESEL:	param_run +1;
-		// PR_RUNNING_TRAIN_ELECTRIC:	param_run +1;
+		PR_RUNNING_TRAIN_ELECTRIC:	param_run -2;
 	}
-# 1 "xUSSRplus.pnml" 10
+# 1 "xUSSRplus.pnml" 49
 # 1 "src/controllers/errorController.pnml" 1
 //checks for xUSSR Tracks
 //checks for JapanSet Tracks
@@ -33,7 +77,7 @@ if (((grf_future_status("Meo\B1") == 0) && (grf_future_status("Meo\B1") == 0))) 
 	error( WARNING, string(GRF_USSR));
 }
 
-# 1 "xUSSRplus.pnml" 10
+# 1 "xUSSRplus.pnml" 49
 # 1 "src/controllers/railtypetable.pnml" 1
 railtypetable {
 //  avtonomnaaa
@@ -62,7 +106,7 @@ railtypetable {
 // 2D = D + d (1,5 kv + 3 kv)
   T_2D: [ER2D,  "SAA=",  SEAD,SEBD,SECD,SEDD,SEED,  SDAD,SDBD,SDCD,SDDD,SDED,  SCAD,SCBD,SCCD,SCDD,SCED,  SBAD,SBBD,SBCD,SBDD,SBED,  SAAD,SABD,SACD,SADD,SAED,  SEAd,SEBd,SECd,SEDd,SEEd,  SDAd,SDBd,SDCd,SDDd,SDEd,  SCAd,SCBd,SCCd,SCDd,SCEd,  SBAd,SBBd,SBCd,SBDd,SBEd,  SAAd,SABd,SACd,SADd,SAEd,    SEAE,SEBE,SECE,SEDE,SEEE,  SDAE,SDBE,SDCE,SDDE,SDEE,  SCAE,SCBE,SCCE,SCDE,SCEE,  SBAE,SBBE,SBCE,SBDE,SBEE,  SAAE,SABE,SACE,SADE,SAEE,  ELRL],
 }
-# 1 "xUSSRplus.pnml" 10
+# 1 "xUSSRplus.pnml" 49
 # 1 "src/controllers/coupleLogic.pnml" 1
 //prevents unrealistic consists
 switch (FEAT_TRAINS, SELF, sw_stop_start_3, num_vehs_in_consist < 9) {				
@@ -76,7 +120,7 @@ switch(FEAT_TRAINS, SELF, sw_attach_vehid, vehicle_type_id) {
   return string(STR_ATTACH_ERROR);
 }
 
-# 1 "xUSSRplus.pnml" 10
+# 1 "xUSSRplus.pnml" 49
 # 1 "src/controllers/dummy.pnml" 1
 //offset fixing
 train_width_32_px = 1;
@@ -95,7 +139,7 @@ switch (FEAT_TRAINS, SELF, sw_length_2_8_2, position_in_articulated_veh % 3) {
   1: return 8;
   return 3;
 }
-# 1 "xUSSRplus.pnml" 10
+# 1 "xUSSRplus.pnml" 49
 # 1 "src/controllers/templates.pnml" 1
 
 template tmpl_purchase (x, y) {
@@ -131,7 +175,7 @@ template tmpl_std_rev(x,y){
 [x + 41,  y,	52,	23,		-23,	-20, CROP] //long
 [x + 94,  y,	32,	32,		-10, 	-22, CROP] //dia2
 }
-# 1 "xUSSRplus.pnml" 10
+# 1 "xUSSRplus.pnml" 49
 # 1 "src/controllers/muCar.pnml" 1
 spriteset (set_mu_car_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,    "gfx/misc/mucarbuy.png") { tmpl_purchase(0, 0) }
 spriteset (set_mu_car_base, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,  "gfx/misc/mucar.png") { tmpl_std(0, 0) }
@@ -186,7 +230,7 @@ item(FEAT_TRAINS, mu_car, 10000) {
     }
 
 }
-# 1 "xUSSRplus.pnml" 10
+# 1 "xUSSRplus.pnml" 49
 
 //*train import
 # 1 "src/ivolga/ivolga0.pnml" 1
@@ -691,7 +735,7 @@ item(FEAT_TRAINS, ivolga0, 100) {
       articulated_part:sw_mucar_full_articulated_part;
     }
 }
-# 1 "xUSSRplus.pnml" 10
+# 1 "xUSSRplus.pnml" 49
 # 1 "src/ivolga/ivolga1.pnml" 1
 spriteset (ivolga1_purchase_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,      "gfx/ivolga/ivolga1_purchase.png") { tmpl_purchase(0, 0) }
 spriteset (ivolga1_purchase_2, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,      "gfx/ivolga/ivolga1_purchase.png") { tmpl_purchase(0, 18) }
@@ -1376,7 +1420,7 @@ item(FEAT_TRAINS, ivolga1, 101) {
                         );
         start_stop: sw_stop_start_3; 
         cargo_capacity: sw_ivolga1_capacity_main;
-        purchase_cargo_capacity: 124;
+        purchase_cargo_capacity: 122;
         length: sw_length_2_8_2;
         articulated_part:sw_mucar_full_articulated_part;
     }
@@ -1392,7 +1436,7 @@ item(FEAT_TRAINS, ivolga1, 101) {
       articulated_part:sw_mucar_full_articulated_part;
     }
 }
-# 1 "xUSSRplus.pnml" 10
+# 1 "xUSSRplus.pnml" 49
 # 1 "src/ivolga/ivolga2.pnml" 1
 spriteset (ivolga2_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,      "gfx/ivolga/ivolga2_purchase.png") { tmpl_purchase(0, 0) }
 
@@ -1652,7 +1696,7 @@ item(FEAT_TRAINS, ivolga2, 102) {
                         );
         start_stop: sw_stop_start_3; 
         cargo_capacity: sw_ivolga1_capacity_main;
-        purchase_cargo_capacity: 124;
+        purchase_cargo_capacity: 122;
         length: sw_length_2_8_2;
         articulated_part:sw_mucar_full_articulated_part;
     }
@@ -1668,7 +1712,7 @@ item(FEAT_TRAINS, ivolga2, 102) {
       articulated_part:sw_mucar_full_articulated_part;
     }
 }
-# 1 "xUSSRplus.pnml" 10
+# 1 "xUSSRplus.pnml" 49
 # 1 "src/ivolga/ivolga3.pnml" 1
 spriteset (ivolga3_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,      "gfx/ivolga/ivolga3_purchase.png") { tmpl_purchase(0, 0) }
 
@@ -1928,7 +1972,7 @@ item(FEAT_TRAINS, ivolga3, 103) {
       articulated_part:sw_mucar_full_articulated_part;
     }
 }
-# 1 "xUSSRplus.pnml" 10
+# 1 "xUSSRplus.pnml" 49
 # 1 "src/ivolga/ivolga4.pnml" 1
 spriteset (ivolga4_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,      "gfx/ivolga/ivolga4_purchase.png") { tmpl_purchase(0, 0) }
 //blue doors
@@ -2462,4 +2506,4 @@ item(FEAT_TRAINS, ivolga4, 104) {
       articulated_part:sw_mucar_full_articulated_part;
     }
 }
-# 1 "xUSSRplus.pnml" 10
+# 1 "xUSSRplus.pnml" 49

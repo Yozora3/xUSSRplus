@@ -1,6 +1,20 @@
 ##grflangid 0x07
 STR_DESC:{RED}xUSSR{GOLD}+{RED}Ivolga Addon{BLACK} добавляет современные Русские поезда ЭГ2Тв "Иволга".{}Дополнение к {RED}xUSSR{BLACK}{}{}{TINYFONT}{GREEN}Нарисовал:{LTBLUE} Yozora{GREEN}{}Код:{LTBLUE} Yozora{}{}{SILVER}GPLv2{}2024
 
+# *Param stuff
+# Costs
+STR_PARAM_NAME_BASECOSTMODBUY:Стоимость покупки
+STR_PARAM_DESC_BASECOSTMODBUY:Определяет стоимость покупки состава
+
+STR_PARAM_RUN_NAME:Стоимость обслуживания
+STR_PARAM_RUN_DESC:Определяет стоимость обслуживания состава
+
+STR_PARAM_VLOW:Очень низко
+STR_PARAM_LOW:Низко
+STR_PARAM_NORMAL:Стандарт
+STR_PARAM_HIGH:Высоко
+STR_PARAM_VHIGH:Очень высоко
+
 # *Errors
 STR_ATTACH_ERROR:Прицеплять можно только MU-вагон
 STR_FEW_CARS_3_ERROR:Состав требует как минимум 3 вагона

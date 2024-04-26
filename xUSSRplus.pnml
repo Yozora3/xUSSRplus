@@ -5,6 +5,45 @@ grf {
 		url:  string(STR_GRF_URL);
     version: 1; //0.1
     min_compatible_version: 0;
+//params
+  //*basecosts
+    param 0 { 
+      param_buy {
+          type: int;
+          name: string(STR_PARAM_NAME_BASECOSTMODBUY);
+          desc: string(STR_PARAM_DESC_BASECOSTMODBUY);
+          min_value: 0;
+          max_value: 4;
+          def_value: 2;
+          names: {
+                    0: string(STR_PARAM_VLOW);
+                    1: string(STR_PARAM_LOW);
+                    2: string(STR_PARAM_NORMAL);
+                    3: string(STR_PARAM_HIGH);
+                    4: string(STR_PARAM_VHIGH);
+              };
+          }
+      }
+
+  //*runningcosts
+    param 1 {
+      param_run {
+        type: int;
+        name: string(STR_PARAM_RUN_NAME);
+        desc: string(STR_PARAM_RUN_DESC);
+        min_value: 0;
+        max_value: 4;
+        def_value: 2;
+        names: {
+                  0: string(STR_PARAM_VLOW);
+                  1: string(STR_PARAM_LOW);
+                  2: string(STR_PARAM_NORMAL);
+                  3: string(STR_PARAM_HIGH);
+                  4: string(STR_PARAM_VHIGH);
+                  //5: string(STR_PARAM_XUSSR) Ultra costs just like in XUSSR
+        };
+      }
+    }
 }
 
 #include "src/controllers/params.pnml"
