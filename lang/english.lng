@@ -11,6 +11,7 @@ GRF_USSR:{WHITE}Please use {YELLOW}xUSSR Rails Set {WHITE}for the best game expe
 
 # *Tech stuff (do not include these in translation files)
 STR_CONCAT_6:{STRING}{STRING}{STRING}{STRING}{STRING}{STRING}{STRING}
+STR_OR_2:{STRING}/{STRING}
 
 # *Desc stuff
 # gauge
@@ -35,7 +36,8 @@ STR_DC:{RED}DC 3KV
 # Usage
 STR_USAGE:{BLACK}Usage: {STRING}
 
-STR_COMMUTER:{SILVER}Commuter
+STR_COMMUTER:{SILVER}City/ Suburban Commuter
+STR_REGIO:{SILVER}Regional Commuter
 
 # Operator
 STR_OPERATOR:{BLACK}Operator: {STRING}
@@ -49,6 +51,7 @@ LV_RANDOM: Auto-Timed/Randomized Livery
 LV_DEFAULT: Default Livery
 LV_ORIGINAL: Original Livery
 LV_MCD: With "MCD" Letters {TINYFONT}(2019)
+LV_RENEWED: Renewed Mask {TINYFONT}(2020)
 LV_BLUE_DOOR: Blue Doors Livery
 LV_GREY_DOOR: Grey Doors Livery
 

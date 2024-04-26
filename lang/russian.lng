@@ -1,0 +1,59 @@
+##grflangid 0x07
+STR_DESC:{RED}xUSSR{GOLD}+{RED}Ivolga Addon{BLACK} добавляет современные Русские поезда ЭГ2Тв "Иволга".{}Дополнение к {RED}xUSSR{BLACK}{}{}{TINYFONT}{GREEN}Нарисовал:{LTBLUE} Yozora{GREEN}{}Код:{LTBLUE} Yozora{}{}{SILVER}GPLv2{}2024
+
+# *Errors
+STR_ATTACH_ERROR:Прицеплять можно только MU-вагон
+STR_FEW_CARS_3_ERROR:Состав требует как минимум 3 вагона
+
+GRF_USSR:{WHITE}Пожалуйста используйте {YELLOW}xUSSR Rails Set {WHITE}для лучшего игрового опыта.
+
+# *Desc stuff
+# gauge
+STR_BROADGAUGE:{BLACK}Колея:{GOLD} Широкая (1,520мм){}
+
+# Loading Speed
+STR_LOAD_SPEED:{BLACK}Погрузка: {GOLD}{STRING}{}
+STR_1_DOOR:1 Дверь
+STR_2_DOOR:2 Двери
+STR_3_DOOR:3 Двери
+
+STR_23_DOOR:2/3 Двери
+
+# Formations
+STR_FORMATION:{BLACK}Реальные формации: {GOLD}
+STR_CARS: вагонов{}
+
+# Voltage
+STR_ELECTRIC:{BLACK}Род тока: {STRING}{}
+
+STR_DC:{RED}Постоянный 3кВ
+# Usage
+STR_USAGE:{BLACK}Использование: {STRING}
+
+STR_COMMUTER:{SILVER}Город/Ближний пригород
+STR_REGIO:{SILVER}Дальний пригород
+
+# *operators (not used)
+STR_OPERATOR:{BLACK}Operator: {STRING}
+
+STR_CPPK_MTPPK:{GREEN}Central/{LTBLUE}Moscow-Tver Suburban Passenger Company
+STR_MTPPK:{LTBLUE}Moscow-Tver Suburban Passenger Company
+
+# *Livery names
+LV_RANDOM: Автоматическая/Случайная краска
+LV_DEFAULT: Стандартная краска
+LV_ORIGINAL: Оригинальная краска
+LV_MCD: С надписью "МЦД" {TINYFONT}(2019)
+LV_RENEWED: Обновлённая маска {TINYFONT}(2020)
+LV_BLUE_DOOR: Двери синей покраски
+LV_GREY_DOOR: Двери серой покраски
+
+# mu_cars
+STR_MUCAR:ЭГ2Тв "Иволга" Вагон
+STR_MUCAR_DESC:{BLUE}Используется для имитации {GREEN}моторных и прицепных вагонов{BLUE} в составе {GREEN}Иволги{BLUE}.
+
+STR_ivolga0_NAME:ЭГ2Тв "Иволга 0.0"
+STR_ivolga1_NAME:ЭГ2Тв "Иволга 1.0"
+STR_ivolga2_NAME:ЭГ2Тв "Иволга 2.0"
+STR_ivolga3_NAME:ЭГЭ2Тв "Иволга 3.0"
+STR_ivolga4_NAME:ЭГЭ2Тв "Иволга 4.0"

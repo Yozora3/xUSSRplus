@@ -176,12 +176,14 @@ spriteset (ivolga4_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,      "gfx/ivolg
       4: sw_ivolga4_1_mot;
       10: sw_ivolga4_1_mot;
       13: sw_ivolga4_1_mot_rev;
+      19: sw_ivolga4_1_mot;
       sw_ivolga4_1_wag;
     }
     switch(FEAT_TRAINS, SELF, sw_ivolga4_1_panto_placer_6_rev,position_in_consist_from_end%21){
       4: sw_ivolga4_1_mot;
       10: sw_ivolga4_1_mot;
       13: sw_ivolga4_1_mot_rev;
+      19: sw_ivolga4_1_mot;
       sw_ivolga4_1_wag;
     }
     switch(FEAT_TRAINS, PARENT, sw_ivolga4_1_panto_placer_6_main, vehicle_is_reversed){
@@ -368,12 +370,14 @@ spriteset (ivolga4_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,      "gfx/ivolg
       4: sw_ivolga4_2_mot;
       10: sw_ivolga4_2_mot;
       13: sw_ivolga4_2_mot_rev;
+      19: sw_ivolga4_2_mot;
       sw_ivolga4_2_wag;
     }
     switch(FEAT_TRAINS, SELF, sw_ivolga4_2_panto_placer_6_rev,position_in_consist_from_end%21){
       4: sw_ivolga4_2_mot;
       10: sw_ivolga4_2_mot;
       13: sw_ivolga4_2_mot_rev;
+      19: sw_ivolga4_2_mot;
       sw_ivolga4_2_wag;
     }
     switch(FEAT_TRAINS, PARENT, sw_ivolga4_2_panto_placer_6_main, vehicle_is_reversed){

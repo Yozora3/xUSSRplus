@@ -68,7 +68,7 @@ spriteset (ivolga2_1_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       1: sw_ivolga2_1_panto_placer_2_rev;
       sw_ivolga2_1_panto_placer_2;
     }
-  //panto placer 3 (6-7)
+  //panto placer 3 (6-8)
     switch(FEAT_TRAINS, SELF, sw_ivolga2_1_panto_placer_3,position_in_consist%18){
       4: sw_ivolga2_1_mot;
       10: sw_ivolga2_1_mot_d;
@@ -138,12 +138,14 @@ spriteset (ivolga2_1_end_f, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP,   "gfx/ivolga/iv
       4: sw_ivolga2_1_mot;
       10: sw_ivolga2_1_mot;
       13: sw_ivolga2_1_mot_rev;
+      19: sw_ivolga2_1_mot;
       sw_ivolga2_1_wag;
     }
     switch(FEAT_TRAINS, SELF, sw_ivolga2_1_panto_placer_6_rev,position_in_consist_from_end%21){
       4: sw_ivolga2_1_mot_rev;
       10: sw_ivolga2_1_mot_rev;
       13: sw_ivolga2_1_mot;
+      19: sw_ivolga2_1_mot_rev;
       sw_ivolga2_1_wag;
     }
     switch(FEAT_TRAINS, PARENT, sw_ivolga2_1_panto_placer_6_main, vehicle_is_reversed){
